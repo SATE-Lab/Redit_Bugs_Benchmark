@@ -8,7 +8,7 @@ import io.redit.exceptions.RuntimeEngineException;
 
 public class ReditHelper {
     public static int numOfServers = 2;
-    public static final String dir = "activemq-5.15.3";
+    public static final String dir = "activemq-5.15.9";
     public static String getRocketmq1HomeDir(){
         return "/activemq/" + dir + "/mq1";
     }
@@ -20,7 +20,7 @@ public class ReditHelper {
     }
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Archive/Activemq/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Archive/Activemq/Activemq-8252/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-activemq")
                 .withService("activemq")

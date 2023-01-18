@@ -39,7 +39,7 @@
         </managementContext>
 
         <persistenceAdapter>
-            <kahaDB directory="/activemq/activemq-5.15.3/mq1/data/kahadb"/>
+            <kahaDB directory="/activemq/activemq-5.15.9/mq1/data/kahadb"/>
         </persistenceAdapter>
 
           <systemUsage>

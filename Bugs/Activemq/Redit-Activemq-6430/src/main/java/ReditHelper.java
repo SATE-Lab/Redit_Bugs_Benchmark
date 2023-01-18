@@ -19,7 +19,7 @@ public class ReditHelper {
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Archive/Activemq/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Archive/Activemq/Activemq-6430/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-activemq")
                 .withService("activemq")

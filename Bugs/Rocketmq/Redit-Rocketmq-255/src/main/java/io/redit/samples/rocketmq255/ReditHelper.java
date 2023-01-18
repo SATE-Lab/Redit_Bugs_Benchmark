@@ -23,7 +23,7 @@ public class ReditHelper {
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Archive/Rocketmq/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Archive/Rocketmq/Rocketmq-255/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-rocketmq")
                 .withService("rocketmq")

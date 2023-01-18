@@ -1,0 +1,7 @@
+src/java/org/apache/cassandra/index/sasi/SASIIndex.java
+src/java/org/apache/cassandra/index/sasi/analyzer/AbstractAnalyzer.java
+src/java/org/apache/cassandra/index/sasi/analyzer/DelimiterAnalyzer.java
+src/java/org/apache/cassandra/index/sasi/analyzer/NoOpAnalyzer.java
+src/java/org/apache/cassandra/index/sasi/analyzer/NonTokenizingAnalyzer.java
+src/java/org/apache/cassandra/index/sasi/analyzer/StandardAnalyzer.java
+src/java/org/apache/cassandra/index/sasi/conf/IndexMode.java

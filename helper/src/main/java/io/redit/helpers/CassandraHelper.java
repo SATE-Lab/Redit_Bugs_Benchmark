@@ -86,8 +86,7 @@ public class CassandraHelper {
         logger.info(commandResults.nodeName() + ": " + commandResults.command());
         if (commandResults.stdOut() != null){
             logger.info(commandResults.stdOut());
-        }else {
-            logger.warn(commandResults.stdErr());
         }
+        logger.warn(commandResults.stdErr());
     }
 }

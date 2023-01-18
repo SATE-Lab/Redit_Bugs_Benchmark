@@ -1,0 +1,31 @@
+19:42:13.226 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+19:42:13.322 [main] INFO  i.r.s.cassandra15297.SampleTest - create snapshot "p/s" ...
+19:42:14.228 [main] INFO  i.r.s.cassandra15297.SampleTest - server1: cd /cassandra/apache-cassandra-3.11.6 && bin/nodetool snapshot -t "p/s"
+19:42:14.228 [main] INFO  i.r.s.cassandra15297.SampleTest -
+19:42:14.228 [main] WARN  i.r.s.cassandra15297.SampleTest - error: Snapshot name cannot contain /
+-- StackTrace --
+java.io.IOException: Snapshot name cannot contain /
+	at org.apache.cassandra.tools.nodetool.Snapshot.execute(Snapshot.java:68)
+	at org.apache.cassandra.tools.NodeTool$NodeToolCmd.run(NodeTool.java:283)
+	at org.apache.cassandra.tools.NodeTool$NodeToolCmd.accept(NodeTool.java:268)
+	at org.apache.cassandra.tools.NodeTool$NodeToolCmd.accept(NodeTool.java:245)
+	at org.apache.cassandra.tools.NodeTool.execute(NodeTool.java:182)
+	at org.apache.cassandra.tools.NodeTool.main(NodeTool.java:54)
+
+
+19:42:14.228 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+19:42:14.563 [qtp1486566962-15] INFO  io.redit.execution.EventService - Event E1 received!
+19:42:14.570 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+19:42:15.558 [main] INFO  i.r.s.cassandra15297.SampleTest - server1: cd /cassandra/apache-cassandra-3.11.6 && bin/nodetool listsnapshots
+19:42:15.558 [main] INFO  i.r.s.cassandra15297.SampleTest - Snapshot Details:
+There are no snapshots
+
+19:42:15.558 [main] WARN  i.r.s.cassandra15297.SampleTest -
+19:42:15.558 [main] INFO  i.r.s.cassandra15297.SampleTest - server1: cd /opt/cassandra/data_file_directories/system_schema/aggregates-924c55872e3a345bb10c12f37c1ba895/snapshots/p/s && ls -l
+19:42:15.558 [main] INFO  i.r.s.cassandra15297.SampleTest -
+19:42:15.558 [main] WARN  i.r.s.cassandra15297.SampleTest - sh: 1: cd: can't cd to /opt/cassandra/data_file_directories/system_schema/aggregates-924c55872e3a345bb10c12f37c1ba895/snapshots/p/s
+
+19:42:15.558 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+19:42:15.565 [qtp1486566962-13] INFO  io.redit.execution.EventService - Event E2 received!
+19:42:15.566 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+19:42:15.566 [main] INFO  i.r.s.cassandra15297.SampleTest - completed !!!

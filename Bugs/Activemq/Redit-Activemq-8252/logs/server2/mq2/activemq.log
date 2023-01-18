@@ -1,3 +1,0 @@
-2023-01-04 09:58:54,503 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@1a968a59: startup date [Wed Jan 04 09:58:54 UTC 2023]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
-2023-01-04 09:58:57,786 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/activemq/activemq-5.15.3/mq1/data/kahadb] | org.apache.activemq.broker.BrokerService | main
-2023-01-04 09:58:57,835 | INFO  | Database /activemq/activemq-5.15.3/mq1/data/kahadb/lock is locked by another server. This broker is now in slave mode waiting a lock to be acquired | org.apache.activemq.store.SharedFileLocker | main

@@ -20,7 +20,7 @@ public class ReditHelper {
 
     public static Deployment getDeployment(){
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Archive/Hadoop/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Archive/Hadoop/Hadoop-14987/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-hdfs-14987")
                 .withService("hadoop-base")
