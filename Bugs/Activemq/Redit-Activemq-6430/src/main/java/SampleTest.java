@@ -25,7 +25,7 @@ public class SampleTest {
         helper = new ActivemqHelper(runner, homeDir, logger, ReditHelper.numOfServers);
 
         helper.startServers();
-        Thread.sleep(10000);
+        Thread.sleep(15000);
         helper.checkServers();
     }
 

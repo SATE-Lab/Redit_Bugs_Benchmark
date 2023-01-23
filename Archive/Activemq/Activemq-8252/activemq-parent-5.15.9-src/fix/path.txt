@@ -1,0 +1,3 @@
+activemq-broker/src/main/java/org/apache/activemq/security/JaasAuthenticationBroker.java
+activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java
+

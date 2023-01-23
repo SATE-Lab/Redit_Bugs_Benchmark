@@ -1,0 +1,4 @@
+zookeeper-contrib/zookeeper-contrib-zooinspector/pom.xml
+zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/gui/ZooInspectorTreeView.java
+zookeeper-contrib/zookeeper-contrib-zooinspector/src/main/java/org/apache/zookeeper/inspector/manager/ZooInspectorManagerImpl.java
+
