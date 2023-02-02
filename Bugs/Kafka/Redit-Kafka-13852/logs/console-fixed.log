@@ -1,0 +1,60 @@
+17:29:42.884 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+17:29:42.975 [main] INFO  i.r.samples.kafka13852.SampleTest - server1 make test Dirs ...
+17:29:43.045 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+17:29:43.340 [qtp1690859824-14] INFO  io.redit.execution.EventService - Event E1 received!
+17:29:45.341 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+17:29:45.343 [main] INFO  i.r.samples.kafka13852.SampleTest - server1 add an Acl in test_not_empty
+17:29:47.727 [main] INFO  i.r.samples.kafka13852.SampleTest - server1: cd /kafka/kafka_2.13-3.2.0/test_not_empty && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=10.2.0.4:2181,10.2.0.3:2181,10.2.0.2:2181 --add --allow-principal User:Peter --allow-host 198.51.200.1 --producer --topic '*'
+17:29:47.727 [main] INFO  i.r.samples.kafka13852.SampleTest - Adding ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:Peter, host=198.51.200.1, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=WRITE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=CREATE, permissionType=ALLOW)
+
+Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:Peter, host=198.51.200.1, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=WRITE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=CREATE, permissionType=ALLOW)
+
+
+17:29:47.727 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+17:29:47.734 [qtp1690859824-17] INFO  io.redit.execution.EventService - Event E2 received!
+17:29:47.735 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E3 ...
+17:29:47.736 [main] INFO  i.r.samples.kafka13852.SampleTest - server1 add an Acl in test_empty
+17:29:49.853 [main] INFO  i.r.samples.kafka13852.SampleTest - server1: cd /kafka/kafka_2.13-3.2.0/test_empty && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=10.2.0.4:2181,10.2.0.3:2181,10.2.0.2:2181 --add --allow-principal User:Peter --allow-host 198.51.200.1 --producer --topic '*'
+17:29:49.853 [main] INFO  i.r.samples.kafka13852.SampleTest - Adding ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:Peter, host=198.51.200.1, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=WRITE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=CREATE, permissionType=ALLOW)
+
+Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:Peter, host=198.51.200.1, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=WRITE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=CREATE, permissionType=ALLOW)
+
+
+17:29:49.853 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E3 ...
+17:29:49.861 [qtp1690859824-17] INFO  io.redit.execution.EventService - Event E3 received!
+17:29:49.862 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E4 ...
+17:29:49.863 [main] INFO  i.r.samples.kafka13852.SampleTest - server1 check file Acl in test_not_empty
+17:29:51.734 [main] INFO  i.r.samples.kafka13852.SampleTest - server1: cd /kafka/kafka_2.13-3.2.0/test_not_empty && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=10.2.0.4:2181,10.2.0.3:2181,10.2.0.2:2181 --list --topic '*'
+17:29:51.734 [main] INFO  i.r.samples.kafka13852.SampleTest - Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:Peter, host=198.51.200.1, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=WRITE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=CREATE, permissionType=ALLOW)
+
+
+17:29:51.734 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E4 ...
+17:29:51.740 [qtp1690859824-18] INFO  io.redit.execution.EventService - Event E4 received!
+17:29:51.741 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E5 ...
+17:29:51.742 [main] INFO  i.r.samples.kafka13852.SampleTest - server1 check file Acl in test_empty
+17:29:53.665 [main] INFO  i.r.samples.kafka13852.SampleTest - server1: cd /kafka/kafka_2.13-3.2.0/test_empty && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=10.2.0.4:2181,10.2.0.3:2181,10.2.0.2:2181 --list --topic '*'
+17:29:53.665 [main] INFO  i.r.samples.kafka13852.SampleTest - Current ACLs for resource `ResourcePattern(resourceType=TOPIC, name=*, patternType=LITERAL)`:
+ 	(principal=User:Peter, host=198.51.200.1, operation=DESCRIBE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=WRITE, permissionType=ALLOW)
+	(principal=User:Peter, host=198.51.200.1, operation=CREATE, permissionType=ALLOW)
+
+
+17:29:53.665 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E5 ...
+17:29:53.672 [qtp1690859824-18] INFO  io.redit.execution.EventService - Event E5 received!
+17:29:53.673 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+17:29:53.673 [main] INFO  i.r.samples.kafka13852.SampleTest - completed !!!

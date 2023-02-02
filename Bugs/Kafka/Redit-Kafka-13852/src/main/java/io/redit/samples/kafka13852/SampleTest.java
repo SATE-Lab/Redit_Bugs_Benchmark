@@ -83,7 +83,7 @@ public class SampleTest {
 
     private void addAcl(int serverId, String dirName) throws RuntimeEngineException {
         String command = "cd " + ReditHelper.getKafkaHomeDir() + "/" + dirName +
-                " && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=" + zookeeperHelper.connectionStr + " --add --allow-principal User:Peter --allow-host 198.51.200.1 --producer --topic *";
+                " && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=" + zookeeperHelper.connectionStr + " --add --allow-principal User:Peter --allow-host 198.51.200.1 --producer --topic '*'";
         logger.info("server" + serverId + " add an Acl in " + dirName);
         CommandResults commandResults = runner.runtime().runCommandInNode("server" + serverId, command);
         kafkaHelper.printResult(commandResults);
@@ -91,7 +91,7 @@ public class SampleTest {
 
     private void checkAcl(int serverId, String dirName) throws RuntimeEngineException {
         String command = "cd " + ReditHelper.getKafkaHomeDir() + "/" + dirName +
-                " && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=" + zookeeperHelper.connectionStr + " --list --topic *";
+                " && ../bin/kafka-acls.sh --authorizer-properties zookeeper.connect=" + zookeeperHelper.connectionStr + " --list --topic '*'";
         logger.info("server" + serverId + " check file Acl in "  + dirName);
         CommandResults commandResults = runner.runtime().runCommandInNode("server" + serverId, command);
         kafkaHelper.printResult(commandResults);
