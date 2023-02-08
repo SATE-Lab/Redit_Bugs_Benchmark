@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 
 import org.apache.cassandra.cql3.restrictions.CustomIndexExpression;
 
+import org.apache.cassandra.exceptions.InvalidRequestException;
 public final class WhereClause
 {
 
@@ -56,6 +57,16 @@ public final class WhereClause
     public boolean containsCustomExpressions()
     {
         return !expressions.isEmpty();
+    }
+
+    public boolean containsTokenRelations()
+    {
+        for (Relation rel : relations)
+        {
+            if (rel.onToken())
+                return true;
+        }
+        return false;
     }
 
     public static final class Builder

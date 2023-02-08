@@ -32,3 +32,4 @@ rm -rf $buildJar1 $buildJar2 $tar
 cp $buildJar1 ./$system/lib/
 cp $buildJar2 ./$system/lib/
 tar -zcvf $tar $system
+rm -rf $buildJar1 $buildJar2

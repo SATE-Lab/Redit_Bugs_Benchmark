@@ -26,3 +26,4 @@ rm -rf $libJar $tar
 mv $buildJar $libJar
 cp $libJar ./$system/lib/
 tar -zcvf $tar $system
+rm -rf $libJar

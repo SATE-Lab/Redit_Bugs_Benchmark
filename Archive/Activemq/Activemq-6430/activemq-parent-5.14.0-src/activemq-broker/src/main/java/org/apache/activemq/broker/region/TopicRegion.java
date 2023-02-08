@@ -162,6 +162,9 @@ public class TopicRegion extends AbstractRegion {
                         sub.context = context;
                         sub.deactivate(keepDurableSubsActive, info.getLastDeliveredSequenceId());
                     }
+                    if (info.isNoLocal()) {
+                        sub.setSelector(sub.getSelector());
+                    }
                     subscriptions.put(info.getConsumerId(), sub);
                 }
             } else {
@@ -189,8 +192,9 @@ public class TopicRegion extends AbstractRegion {
                 // deactivate only if given context is same
                 // as what is in the sub. otherwise, during linksteal
                 // sub will get new context, but will be removed here
-                if (sub.getContext() == context)
+                if (sub.getContext() == context) {
                     sub.deactivate(keepDurableSubsActive, info.getLastDeliveredSequenceId());
+                }
             }
         } else {
             super.removeConsumer(context, info);
@@ -372,6 +376,11 @@ public class TopicRegion extends AbstractRegion {
         }
         if (info1.getSelector() != null && !info1.getSelector().equals(info2.getSelector())) {
             return true;
+        }
+        if (broker.getBrokerService().getStoreOpenWireVersion() >= 11) {
+            if (info1.isNoLocal() ^ info2.isNoLocal()) {
+                return true;
+            }
         }
         return !info1.getDestination().equals(info2.getDestination());
     }

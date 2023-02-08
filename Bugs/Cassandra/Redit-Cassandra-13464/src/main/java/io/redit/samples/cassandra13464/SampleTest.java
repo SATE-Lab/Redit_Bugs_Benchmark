@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
-
 public class SampleTest {
     private static final Logger logger = LoggerFactory.getLogger(SampleTest.class);
     private static ReditRunner runner;

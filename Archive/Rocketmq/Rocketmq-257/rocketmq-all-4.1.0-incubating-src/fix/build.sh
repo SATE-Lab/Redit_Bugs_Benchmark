@@ -36,3 +36,4 @@ mv $buildJar2 $libJar2
 cp $libJar1 ./$system/lib/
 cp $libJar2 ./$system/lib/
 tar -zcvf $tar $system
+rm -rf $libJar1 $libJar2

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 // 定义ifdef的宏，后面可以改一改，比如改成#if
-//#define codeA 1
-//#define codeB 1
+#define codeA 1
+#define codeB 1
 int main()
 {
     FILE *fp1;

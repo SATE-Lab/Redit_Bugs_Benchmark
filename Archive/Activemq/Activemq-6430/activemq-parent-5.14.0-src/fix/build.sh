@@ -35,3 +35,4 @@ cp $libJar2 ./$system/mq1/lib/
 cp $libJar2 ./$system/mq2/lib/
 cp $libJar2 ./$system/mq3/lib/
 tar -zcvf $tar $system
+rm -rf $libJar1 $libJar2
