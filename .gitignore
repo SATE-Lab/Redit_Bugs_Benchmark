@@ -3,11 +3,9 @@
 *.iml
 *.iws
 
-！/Archive/*
-
 # Maven
-log/
 target/
+build/
 
 docs/_build
 dependency-reduced-pom.xml

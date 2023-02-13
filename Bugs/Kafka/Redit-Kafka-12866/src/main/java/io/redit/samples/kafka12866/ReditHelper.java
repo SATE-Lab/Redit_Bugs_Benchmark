@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 3;
     public static final String zookeeperDir = "apache-zookeeper-3.7.1-bin";
-    public static final String kafkaDir = "kafka_2.13-2.7.1";
+    public static final String kafkaDir = "kafka_2.13-3.0.0";
     public static String getZookeeperHomeDir(){
         return "/zookeeper/" + zookeeperDir;
     }
