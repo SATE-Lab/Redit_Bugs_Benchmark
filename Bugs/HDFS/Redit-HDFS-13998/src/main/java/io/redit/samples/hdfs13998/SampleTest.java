@@ -61,7 +61,6 @@ public class SampleTest {
         ErasureCodingPolicy replica_ecPolicyName = dfs.getErasureCodingPolicy(new Path(test1_replicaPath));
         logger.info("Get erasure coding policy in " + test1_path + " : " + path_ecPolicyName);
         logger.info("Get erasure coding policy in " + test1_replicaPath + " : " + replica_ecPolicyName);
-
     }
 
     @Test

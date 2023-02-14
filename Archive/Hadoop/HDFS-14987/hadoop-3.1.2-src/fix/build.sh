@@ -2,9 +2,9 @@
 
 cFile=inject.c
 exeFile=inject
-tgz=kafka_2.13-3.0.0.tgz
-tar=kafka_2.13-3.0.0.tar.gz
-system=kafka_2.13-3.0.0
+jar=hadoop-hdfs-3.1.2.jar
+tar=hadoop-3.1.2.tar.gz
+system=hadoop-3.1.2
 
 if [ -f $injectFile ]
 then
@@ -15,13 +15,14 @@ else
   echo "Error: $cFile not found !"
 fi
 
-cd ..
+cd ../hadoop-hdfs-project/hadoop-hdfs/
 echo "current working directory: `pwd`"
-./gradlew clean releaseTarGz
-cp ./core/build/distributions/$tgz ../
+mvn -DskipTests clean install
+cp ./target/$jar ../../../
 
-cd ..
-tar -zxvf $tgz
+cd ../../../
+echo "current working directory: `pwd`"
 rm -rf $tar
+cp ./$jar ./$system/share/hadoop/hdfs/
 tar -zcvf $tar $system
-rm -rf $system $tgz
+rm -rf $jar

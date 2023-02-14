@@ -1,0 +1,50 @@
+11:44:57.517 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E1 ...
+11:44:57.565 [main] INFO  i.redit.samples.hdfs14987.SampleTest - set ErasureCoding Policy: XOR-2-1-1024k on /test_ec
+11:44:57.664 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E1 ...
+11:44:57.845 [qtp211968962-22] INFO  io.redit.execution.EventService - Event E1 received!
+11:44:57.845 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E2 ...
+11:44:57.846 [main] INFO  i.redit.samples.hdfs14987.SampleTest - put aa.txt into HDFS ...
+11:45:00.199 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E2 ...
+11:45:00.203 [qtp211968962-53] INFO  io.redit.execution.EventService - Event E2 received!
+11:45:00.203 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E3 ...
+11:45:00.227 [main] WARN  o.a.h.i.e.ErasureCodeNative - ISA-L support is not available in your platform... using builtin-java codec where applicable
+11:45:00.228 [main] INFO  i.redit.samples.hdfs14987.SampleTest - /test_ec/aa.txt get blockId:-9223372036854775792
+11:45:00.229 [main] INFO  i.redit.samples.hdfs14987.SampleTest - /test_replica/aa.txt get blockId:1073741825
+11:45:00.229 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E3 ...
+11:45:00.233 [qtp211968962-23] INFO  io.redit.execution.EventService - Event E3 received!
+11:45:00.233 [main] INFO  io.redit.execution.RuntimeEngine - Waiting for event E4 ...
+11:45:01.097 [main] INFO  i.redit.samples.hdfs14987.SampleTest - nn1: /hadoop/hadoop-3.1.2/bin/hdfs fsck /test_ec/aa.txt -blockId blk_-9223372036854775792
+11:45:01.097 [main] INFO  i.redit.samples.hdfs14987.SampleTest - FSCK started by root (auth:SIMPLE) from /10.2.0.2 at Tue Feb 14 03:45:00 UTC 2023
+
+Block Id: blk_-9223372036854775792
+Block belongs to: /test_ec/aa.txt
+No. of Expected Replica: 2
+No. of live Replica: 2
+No. of excess Replica: 0
+No. of stale Replica: 2
+No. of decommissioned Replica: 0
+No. of decommissioning Replica: 0
+No. of corrupted Replica: 0
+Block replica on datanode/rack: dn2/default-rack is HEALTHY
+Block replica on datanode/rack: dn1/default-rack is HEALTHY
+
+11:45:01.980 [main] INFO  i.redit.samples.hdfs14987.SampleTest - nn1: /hadoop/hadoop-3.1.2/bin/hdfs fsck /test_replica/aa.txt -blockId blk_1073741825
+11:45:01.980 [main] INFO  i.redit.samples.hdfs14987.SampleTest - FSCK started by root (auth:SIMPLE) from /10.2.0.2 at Tue Feb 14 03:45:01 UTC 2023
+
+Block Id: blk_1073741825
+Block belongs to: /test_replica/aa.txt
+No. of Expected Replica: 3
+No. of live Replica: 3
+No. of excess Replica: 0
+No. of stale Replica: 3
+No. of decommissioned Replica: 0
+No. of decommissioning Replica: 0
+No. of corrupted Replica: 0
+Block replica on datanode/rack: dn3/default-rack is HEALTHY
+Block replica on datanode/rack: dn2/default-rack is HEALTHY
+Block replica on datanode/rack: dn1/default-rack is HEALTHY
+
+11:45:01.980 [main] INFO  io.redit.execution.RuntimeEngine - Sending test case event E4 ...
+11:45:01.984 [qtp211968962-59] INFO  io.redit.execution.EventService - Event E4 received!
+11:45:01.985 [main] INFO  io.redit.execution.RuntimeEngine - The run sequence is completed!
+11:45:01.985 [main] INFO  i.redit.samples.hdfs14987.SampleTest - completed !!!
