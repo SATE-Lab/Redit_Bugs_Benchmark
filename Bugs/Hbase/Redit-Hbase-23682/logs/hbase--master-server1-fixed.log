@@ -1,0 +1,222 @@
+Tue Feb 14 08:56:29 UTC 2023 Starting master on server1
+core file size          (blocks, -c) unlimited
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 62564
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1048576
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) unlimited
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+2023-02-14 08:56:29,393 INFO  [main] master.HMaster: STARTING service HMaster
+2023-02-14 08:56:29,394 INFO  [main] util.VersionInfo: HBase 2.2.2
+2023-02-14 08:56:29,394 INFO  [main] util.VersionInfo: Source code repository git://6ad68c41b902/opt/hbase-rm/output/hbase revision=e6513a76c91cceda95dad7af246ac81d46fa2589
+2023-02-14 08:56:29,394 INFO  [main] util.VersionInfo: Compiled by hbase-rm on Sat Oct 19 10:10:12 UTC 2019
+2023-02-14 08:56:29,394 INFO  [main] util.VersionInfo: From source with checksum 4d23f97701e395c5d34db1882ac5021b
+2023-02-14 08:56:29,527 INFO  [main] util.ServerCommandLine: hbase.tmp.dir: ./tmp
+2023-02-14 08:56:29,527 INFO  [main] util.ServerCommandLine: hbase.rootdir: hdfs://mycluster/hbase
+2023-02-14 08:56:29,527 INFO  [main] util.ServerCommandLine: hbase.cluster.distributed: true
+2023-02-14 08:56:29,527 INFO  [main] util.ServerCommandLine: hbase.zookeeper.quorum: 10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_LOGFILE=hbase--master-server1.log
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:JAVA_URL_VERSION=8u242b08
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:JAVA_HOME=/usr/local/openjdk-8
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:LANG=C.UTF-8
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:REDIT_EVENT_SERVER_IP_ADDRESS=172.17.0.1
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_REST_OPTS=
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:JVM_PID=220
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:PWD=/hbase/hbase-2.2.2
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:JAVA_VERSION=8u242
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:FAKETIME_NO_CACHE=1
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_ROOT_LOGGER=INFO,RFA
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_ENV_INIT=true
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_IDENT_STRING=
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_ZNODE_FILE=/tmp/hbase--master.znode
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_LOG_DIR=/hbase/hbase-2.2.2/logs
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_LOG_PREFIX=hbase--master-server1
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:OLDPWD=/
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:FAKETIME_TIMESTAMP_FILE=/redit_libfaketime
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: se/hbase-2.2.2/lib/okhttp-2.4.0.jar:/hbase/hbase-2.2.2/lib/okio-1.4.0.jar:/hbase/hbase-2.2.2/lib/osgi-resource-locator-1.0.1.jar:/hbase/hbase-2.2.2/lib/paranamer-2.3.jar:/hbase/hbase-2.2.2/lib/protobuf-java-2.5.0.jar:/hbase/hbase-2.2.2/lib/snappy-java-1.0.5.jar:/hbase/hbase-2.2.2/lib/spymemcached-2.12.2.jar:/hbase/hbase-2.2.2/lib/validation-api-1.1.0.Final.jar:/hbase/hbase-2.2.2/lib/xmlenc-0.52.jar:/hbase/hbase-2.2.2/lib/xz-1.0.jar:/hbase/hbase-2.2.2/lib/zookeeper-3.4.10.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/audience-annotations-0.5.0.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/commons-logging-1.2.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/findbugs-annotations-1.3.9-1.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/htrace-core4-4.2.0-incubating.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/log4j-1.2.17.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-api-1.7.25.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-log4j12-1.7.25.jar
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_MANAGES_ZK=false
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:REDIT_EVENT_SERVER_PORT_NUMBER=38969
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_AUTOSTART_FILE=/tmp/hbase--master.autostart
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HOSTNAME=server1
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:LD_PRELOAD=/usr/local/lib/faketime/libfaketimeMT.so.1
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_NICENESS=0
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:DONT_FAKE_MONOTONIC=1
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_SECURITY_LOGGER=INFO,RFAS
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_HOME=/hbase/hbase-2.2.2
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HBASE_THRIFT_OPTS=
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:SHLVL=2
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:HOME=/root
+2023-02-14 08:56:29,528 INFO  [main] util.ServerCommandLine: env:MALLOC_ARENA_MAX=4
+2023-02-14 08:56:29,529 INFO  [main] util.ServerCommandLine: vmName=OpenJDK 64-Bit Server VM, vmVendor=Oracle Corporation, vmVersion=25.242-b08
+2023-02-14 08:56:29,529 INFO  [main] util.ServerCommandLine: vmInputArguments=[-Dproc_master, -XX:OnOutOfMemoryError=kill -9 %p, -Dhbase.log.dir=/hbase/hbase-2.2.2/logs, -Dhbase.log.file=hbase--master-server1.log, -Dhbase.home.dir=/hbase/hbase-2.2.2, -Dhbase.id.str=, -Dhbase.root.logger=INFO,RFA, -Dhbase.security.logger=INFO,RFAS]
+2023-02-14 08:56:29,759 INFO  [main] metrics.MetricRegistries: Loaded MetricRegistries class org.apache.hadoop.hbase.metrics.impl.MetricRegistriesImpl
+2023-02-14 08:56:29,775 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-02-14 08:56:29,973 INFO  [main] regionserver.RSRpcServices: master/server1:16000 server-side Connection retries=45
+2023-02-14 08:56:29,985 INFO  [main] ipc.RpcExecutor: Instantiated default.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=3, maxQueueLength=300, handlerCount=30
+2023-02-14 08:56:29,986 INFO  [main] ipc.RpcExecutor: Instantiated priority.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=2, maxQueueLength=300, handlerCount=20
+2023-02-14 08:56:29,986 INFO  [main] ipc.RpcExecutor: Instantiated replication.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=1, maxQueueLength=300, handlerCount=3
+2023-02-14 08:56:29,986 INFO  [main] ipc.RpcExecutor: Instantiated metaPriority.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=1, maxQueueLength=300, handlerCount=1
+2023-02-14 08:56:30,046 INFO  [main] ipc.RpcServerFactory: Creating org.apache.hadoop.hbase.ipc.NettyRpcServer hosting hbase.pb.MasterService, hbase.pb.RegionServerStatusService, hbase.pb.LockService, hbase.pb.HbckService, hbase.pb.ClientService, hbase.pb.AdminService
+2023-02-14 08:56:30,101 INFO  [main] ipc.NettyRpcServer: Bind to /10.2.0.7:16000
+2023-02-14 08:56:30,531 INFO  [main] fs.HFileSystem: Added intercepting call to namenode#getBlockLocations so can do block reordering using class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2023-02-14 08:56:30,538 INFO  [main] fs.HFileSystem: Added intercepting call to namenode#getBlockLocations so can do block reordering using class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2023-02-14 08:56:30,667 INFO  [main] zookeeper.RecoverableZooKeeper: Process identifier=master:16000 connecting to ZooKeeper ensemble=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:host.name=server1
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:java.version=1.8.0_242
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:java.vendor=Oracle Corporation
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:java.home=/usr/local/openjdk-8/jre
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: se/hbase-2.2.2/lib/okhttp-2.4.0.jar:/hbase/hbase-2.2.2/lib/okio-1.4.0.jar:/hbase/hbase-2.2.2/lib/osgi-resource-locator-1.0.1.jar:/hbase/hbase-2.2.2/lib/paranamer-2.3.jar:/hbase/hbase-2.2.2/lib/protobuf-java-2.5.0.jar:/hbase/hbase-2.2.2/lib/snappy-java-1.0.5.jar:/hbase/hbase-2.2.2/lib/spymemcached-2.12.2.jar:/hbase/hbase-2.2.2/lib/validation-api-1.1.0.Final.jar:/hbase/hbase-2.2.2/lib/xmlenc-0.52.jar:/hbase/hbase-2.2.2/lib/xz-1.0.jar:/hbase/hbase-2.2.2/lib/zookeeper-3.4.10.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/audience-annotations-0.5.0.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/commons-logging-1.2.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/findbugs-annotations-1.3.9-1.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/htrace-core4-4.2.0-incubating.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/log4j-1.2.17.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-api-1.7.25.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-log4j12-1.7.25.jar
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:java.io.tmpdir=/tmp
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:java.compiler=<NA>
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:os.name=Linux
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:os.arch=amd64
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:os.version=5.15.0-60-generic
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:user.name=root
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:user.home=/root
+2023-02-14 08:56:30,687 INFO  [main] zookeeper.ZooKeeper: Client environment:user.dir=/hbase/hbase-2.2.2
+2023-02-14 08:56:30,688 INFO  [main] zookeeper.ZooKeeper: Initiating client connection, connectString=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.PendingWatcher@22bd2039
+2023-02-14 08:56:30,700 INFO  [main-SendThread(10.2.0.13:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.13/10.2.0.13:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-14 08:56:30,703 INFO  [main-SendThread(10.2.0.13:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.13/10.2.0.13:2181, initiating session
+2023-02-14 08:56:30,734 INFO  [main-SendThread(10.2.0.13:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.13/10.2.0.13:2181, sessionid = 0x30000363d140000, negotiated timeout = 40000
+2023-02-14 08:56:30,849 INFO  [main] util.log: Logging initialized @1689ms
+2023-02-14 08:56:30,890 INFO  [main] http.HttpRequestLog: Http request log for http.requests.master is not defined
+2023-02-14 08:56:30,899 INFO  [main] http.HttpServer: Added global filter 'safety' (class=org.apache.hadoop.hbase.http.HttpServer$QuotingInputFilter)
+2023-02-14 08:56:30,899 INFO  [main] http.HttpServer: Added global filter 'clickjackingprevention' (class=org.apache.hadoop.hbase.http.ClickjackingPreventionFilter)
+2023-02-14 08:56:30,900 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context master
+2023-02-14 08:56:30,900 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2023-02-14 08:56:30,900 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2023-02-14 08:56:30,903 INFO  [main] http.HttpServer: ASYNC_PROFILER_HOME environment variable and async.profiler.home system property not specified. Disabling /prof endpoint.
+2023-02-14 08:56:30,915 INFO  [main] http.HttpServer: Jetty bound to port 16010
+2023-02-14 08:56:30,916 INFO  [main] server.Server: jetty-9.3.27.v20190418, build timestamp: 2019-04-18T18:11:38Z, git hash: d3e249f86955d04bc646bb620905b7c1bc596a8d
+2023-02-14 08:56:30,939 INFO  [main] handler.ContextHandler: Started o.e.j.s.ServletContextHandler@60acd609{/logs,file:///hbase/hbase-2.2.2/logs/,AVAILABLE}
+2023-02-14 08:56:30,939 INFO  [main] handler.ContextHandler: Started o.e.j.s.ServletContextHandler@3f49e266{/static,file:///hbase/hbase-2.2.2/hbase-webapps/static/,AVAILABLE}
+2023-02-14 08:56:30,998 INFO  [main] webapp.StandardDescriptorProcessor: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2023-02-14 08:56:31,025 INFO  [main] handler.ContextHandler: Started o.e.j.w.WebAppContext@7c551ad4{/,file:///hbase/hbase-2.2.2/hbase-webapps/master/,AVAILABLE}{file:/hbase/hbase-2.2.2/hbase-webapps/master}
+2023-02-14 08:56:31,031 INFO  [main] server.AbstractConnector: Started ServerConnector@3d7b1f1c{HTTP/1.1,[http/1.1]}{0.0.0.0:16010}
+2023-02-14 08:56:31,031 INFO  [main] server.Server: Started @1871ms
+2023-02-14 08:56:31,034 INFO  [main] master.HMaster: hbase.rootdir=hdfs://mycluster/hbase, hbase.cluster.distributed=true
+2023-02-14 08:56:31,053 INFO  [master/server1:16000:becomeActiveMaster] master.HMaster: Adding backup master ZNode /hbase/backup-masters/server1,16000,1676364989549
+2023-02-14 08:56:31,137 INFO  [master/server1:16000:becomeActiveMaster] master.ActiveMasterManager: Deleting ZNode for /hbase/backup-masters/server1,16000,1676364989549 from backup master directory
+2023-02-14 08:56:31,147 INFO  [master/server1:16000:becomeActiveMaster] master.ActiveMasterManager: Registered as active master=server1,16000,1676364989549
+2023-02-14 08:56:31,927 INFO  [master/server1:16000:becomeActiveMaster] util.FSUtils: Created version file at hdfs://mycluster/hbase with version=8
+2023-02-14 08:56:32,005 INFO  [master/server1:16000:becomeActiveMaster] master.MasterFileSystem: BOOTSTRAP: creating hbase:meta region
+2023-02-14 08:56:32,017 INFO  [master/server1:16000:becomeActiveMaster] regionserver.HRegion: , {NAME => 'rep_barrier', VERSIONS => '2147483647', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'NONE', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'true', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536'}, {NAME => 'table', VERSIONS => '3', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'NONE', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'true', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '8192'}, regionDir=hdfs://mycluster/hbase
+2023-02-14 08:56:32,103 INFO  [StoreOpener-1588230740-1] hfile.CacheConfig: Created cacheConfig: cacheDataOnRead=false, cacheDataOnWrite=false, cacheIndexesOnWrite=false, cacheBloomsOnWrite=false, cacheEvictOnClose=false, cacheDataCompressed=false, prefetchOnOpen=false for family {NAME => 'info', VERSIONS => '3', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'NONE', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'false', BLOCKSIZE => '8192'} with blockCache=null
+2023-02-14 08:56:32,108 INFO  [StoreOpener-1588230740-1] compactions.CompactionConfiguration: size [128 MB, 8.00 EB, 8.00 EB); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; throttle point 2684354560; major period 604800000, major jitter 0.500000, min locality to compact 0.000000; tiered compaction: max_age 9223372036854775807, incoming window min 6, compaction policy for tiered window org.apache.hadoop.hbase.regionserver.compactions.ExploringCompactionPolicy, single output for minor true, compaction window factory org.apache.hadoop.hbase.regionserver.compactions.ExponentialCompactionWindowFactory
+2023-02-14 08:56:32,119 INFO  [StoreOpener-1588230740-1] regionserver.HStore: Store=info,  memstore type=DefaultMemStore, storagePolicy=HOT, verifyBulkLoads=false, parallelPutCountPrintThreshold=50, encoding=NONE, compression=NONE
+2023-02-14 08:56:32,129 INFO  [StoreOpener-1588230740-1] hfile.CacheConfig: Created cacheConfig: cacheDataOnRead=true, cacheDataOnWrite=false, cacheIndexesOnWrite=false, cacheBloomsOnWrite=false, cacheEvictOnClose=false, cacheDataCompressed=false, prefetchOnOpen=false for family {NAME => 'rep_barrier', VERSIONS => '2147483647', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'NONE', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'true', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536'} with blockCache=null
+2023-02-14 08:56:32,129 INFO  [StoreOpener-1588230740-1] compactions.CompactionConfiguration: size [128 MB, 8.00 EB, 8.00 EB); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; throttle point 2684354560; major period 604800000, major jitter 0.500000, min locality to compact 0.000000; tiered compaction: max_age 9223372036854775807, incoming window min 6, compaction policy for tiered window org.apache.hadoop.hbase.regionserver.compactions.ExploringCompactionPolicy, single output for minor true, compaction window factory org.apache.hadoop.hbase.regionserver.compactions.ExponentialCompactionWindowFactory
+2023-02-14 08:56:32,130 INFO  [StoreOpener-1588230740-1] regionserver.HStore: Store=rep_barrier,  memstore type=DefaultMemStore, storagePolicy=HOT, verifyBulkLoads=false, parallelPutCountPrintThreshold=50, encoding=NONE, compression=NONE
+2023-02-14 08:56:32,140 INFO  [StoreOpener-1588230740-1] hfile.CacheConfig: Created cacheConfig: cacheDataOnRead=true, cacheDataOnWrite=false, cacheIndexesOnWrite=false, cacheBloomsOnWrite=false, cacheEvictOnClose=false, cacheDataCompressed=false, prefetchOnOpen=false for family {NAME => 'table', VERSIONS => '3', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'NONE', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'true', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '8192'} with blockCache=null
+2023-02-14 08:56:32,140 INFO  [StoreOpener-1588230740-1] compactions.CompactionConfiguration: size [128 MB, 8.00 EB, 8.00 EB); files [3, 10); ratio 1.200000; off-peak ratio 5.000000; throttle point 2684354560; major period 604800000, major jitter 0.500000, min locality to compact 0.000000; tiered compaction: max_age 9223372036854775807, incoming window min 6, compaction policy for tiered window org.apache.hadoop.hbase.regionserver.compactions.ExploringCompactionPolicy, single output for minor true, compaction window factory org.apache.hadoop.hbase.regionserver.compactions.ExponentialCompactionWindowFactory
+2023-02-14 08:56:32,141 INFO  [StoreOpener-1588230740-1] regionserver.HStore: Store=table,  memstore type=DefaultMemStore, storagePolicy=HOT, verifyBulkLoads=false, parallelPutCountPrintThreshold=50, encoding=NONE, compression=NONE
+2023-02-14 08:56:32,168 INFO  [master/server1:16000:becomeActiveMaster] regionserver.HRegion: Opened 1588230740; next sequenceid=2
+2023-02-14 08:56:32,168 INFO  [master/server1:16000:becomeActiveMaster] regionserver.HRegion: Closed hbase:meta,,1.1588230740
+2023-02-14 08:56:32,280 INFO  [master/server1:16000:becomeActiveMaster] fs.HFileSystem: Added intercepting call to namenode#getBlockLocations so can do block reordering using class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2023-02-14 08:56:32,286 INFO  [master/server1:16000:becomeActiveMaster] coordination.SplitLogManagerCoordination: Found 0 orphan tasks and 0 rescan nodes
+2023-02-14 08:56:32,322 INFO  [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x1553307f] zookeeper.ZooKeeper: Initiating client connection, connectString=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.ReadOnlyZKClient$$Lambda$84/1828566423@29ff366c
+2023-02-14 08:56:32,322 INFO  [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x1553307f-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.7/10.2.0.7:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-14 08:56:32,323 INFO  [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x1553307f-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.7/10.2.0.7:2181, initiating session
+2023-02-14 08:56:32,328 INFO  [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x1553307f-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.7/10.2.0.7:2181, sessionid = 0x10000363d090002, negotiated timeout = 40000
+2023-02-14 08:56:32,351 INFO  [master/server1:16000:becomeActiveMaster] procedure2.ProcedureExecutor: Starting 16 core workers (bigger of cpus/4 or 16) with max (burst) worker count=160
+2023-02-14 08:56:32,361 INFO  [master/server1:16000:becomeActiveMaster] wal.WALProcedureStore: Rolled new Procedure Store WAL, id=1
+2023-02-14 08:56:32,362 INFO  [master/server1:16000:becomeActiveMaster] procedure2.ProcedureExecutor: Recovered WALProcedureStore lease in 9msec
+2023-02-14 08:56:32,362 INFO  [master/server1:16000:becomeActiveMaster] procedure2.ProcedureExecutor: Loaded WALProcedureStore in 0msec
+2023-02-14 08:56:32,362 INFO  [master/server1:16000:becomeActiveMaster] procedure2.RemoteProcedureDispatcher: Instantiated, coreThreads=128 (allowCoreThreadTimeOut=true), queueMaxSize=32, operationDelay=150
+2023-02-14 08:56:32,380 INFO  [master/server1:16000:becomeActiveMaster] master.RegionServerTracker: Starting RegionServerTracker; 0 have existing ServerCrashProcedures, 0 possibly 'live' servers, and 0 'splitting'.
+2023-02-14 08:56:32,394 INFO  [master/server1:16000:becomeActiveMaster] balancer.BaseLoadBalancer: slop=0.001, systemTablesOnMaster=false
+2023-02-14 08:56:32,398 INFO  [master/server1:16000:becomeActiveMaster] balancer.StochasticLoadBalancer: Loaded config; maxSteps=1000000, stepsPerRegion=800, maxRunningTime=30000, isByTable=false, etc.
+2023-02-14 08:56:32,415 INFO  [master/server1:16000:becomeActiveMaster] master.HMaster: Active/primary master=server1,16000,1676364989549, sessionid=0x30000363d140000, setting cluster-up flag (Was=false)
+2023-02-14 08:56:32,490 WARN  [master/server1:16000:becomeActiveMaster] snapshot.SnapshotManager: Couldn't delete working snapshot directory: hdfs://mycluster/hbase/.hbase-snapshot/.tmp
+2023-02-14 08:56:32,523 INFO  [master/server1:16000:becomeActiveMaster] master.HMaster: hbase:meta {1588230740 state=OFFLINE, ts=1676364992377, server=null}
+2023-02-14 08:56:32,701 INFO  [master/server1:16000:becomeActiveMaster] procedure2.TimeoutExecutorThread: ADDED pid=-1, state=WAITING_TIMEOUT; org.apache.hadoop.hbase.procedure2.CompletedProcedureCleaner; timeout=30000, timestamp=1676365022701
+2023-02-14 08:56:32,702 INFO  [master/server1:16000:becomeActiveMaster] cleaner.DirScanPool: Cleaner pool size is 5
+2023-02-14 08:56:32,703 INFO  [master/server1:16000:becomeActiveMaster] zookeeper.RecoverableZooKeeper: Process identifier=replicationLogCleaner connecting to ZooKeeper ensemble=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181
+2023-02-14 08:56:32,703 INFO  [master/server1:16000:becomeActiveMaster] zookeeper.ZooKeeper: Initiating client connection, connectString=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.PendingWatcher@666ad6bf
+2023-02-14 08:56:32,703 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.6/10.2.0.6:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-14 08:56:32,703 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.6/10.2.0.6:2181, initiating session
+2023-02-14 08:56:32,703 INFO  [master/server1:16000:becomeActiveMaster] cleaner.LogCleaner: Creating 2 OldWALs cleaner threads
+2023-02-14 08:56:32,710 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.6/10.2.0.6:2181, sessionid = 0x20000363d020003, negotiated timeout = 40000
+2023-02-14 08:56:32,718 INFO  [PEWorker-1] procedure2.ProcedureExecutor: Initialized subprocedures=[{pid=2, ppid=1, state=RUNNABLE:REGION_STATE_TRANSITION_GET_ASSIGN_CANDIDATE; TransitRegionStateProcedure table=hbase:meta, region=1588230740, ASSIGN}]
+2023-02-14 08:56:32,733 INFO  [PEWorker-2] procedure.MasterProcedureScheduler: Took xlock for pid=2, ppid=1, state=RUNNABLE:REGION_STATE_TRANSITION_GET_ASSIGN_CANDIDATE; TransitRegionStateProcedure table=hbase:meta, region=1588230740, ASSIGN
+2023-02-14 08:56:32,744 INFO  [PEWorker-2] assignment.TransitRegionStateProcedure: Starting pid=2, ppid=1, state=RUNNABLE:REGION_STATE_TRANSITION_GET_ASSIGN_CANDIDATE, locked=true; TransitRegionStateProcedure table=hbase:meta, region=1588230740, ASSIGN; rit=OFFLINE, location=null; forceNewPlan=false, retain=false
+2023-02-14 08:56:32,895 WARN  [master/server1:16000] assignment.AssignmentManager: No servers available; cannot place 1 unassigned regions.
+2023-02-14 08:56:33,896 WARN  [master/server1:16000] assignment.AssignmentManager: No servers available; cannot place 1 unassigned regions.
+2023-02-14 08:56:34,897 WARN  [master/server1:16000] assignment.AssignmentManager: No servers available; cannot place 1 unassigned regions.
+2023-02-14 08:56:35,644 INFO  [RpcServer.default.FPBQ.Fifo.handler=28,queue=1,port=16000] master.ServerManager: Registering regionserver=server1,16020,1676364990671
+2023-02-14 08:56:35,645 INFO  [RpcServer.default.FPBQ.Fifo.handler=27,queue=0,port=16000] master.ServerManager: Registering regionserver=redit_sample-hbase_server3_1676364952.redit_sample-hbase_1676364951,16020,1676364990744
+2023-02-14 08:56:35,645 INFO  [RpcServer.default.FPBQ.Fifo.handler=29,queue=2,port=16000] master.ServerManager: Registering regionserver=redit_sample-hbase_server2_1676364951.redit_sample-hbase_1676364951,16020,1676364990705
+2023-02-14 08:56:35,685 INFO  [PEWorker-3] zookeeper.MetaTableLocator: Setting hbase:meta (replicaId=0) location in ZooKeeper as redit_sample-hbase_server3_1676364952.redit_sample-hbase_1676364951,16020,1676364990744
+2023-02-14 08:56:35,689 INFO  [RegionServerTracker-0] master.RegionServerTracker: RegionServer ephemeral node created, adding [redit_sample-hbase_server2_1676364951.redit_sample-hbase_1676364951,16020,1676364990705]
+2023-02-14 08:56:35,689 INFO  [RegionServerTracker-0] master.RegionServerTracker: RegionServer ephemeral node created, adding [redit_sample-hbase_server3_1676364952.redit_sample-hbase_1676364951,16020,1676364990744]
+2023-02-14 08:56:35,689 INFO  [RegionServerTracker-0] master.RegionServerTracker: RegionServer ephemeral node created, adding [server1,16020,1676364990671]
+2023-02-14 08:56:35,714 INFO  [PEWorker-3] procedure2.ProcedureExecutor: Initialized subprocedures=[{pid=3, ppid=2, state=RUNNABLE; org.apache.hadoop.hbase.master.assignment.OpenRegionProcedure}]
+2023-02-14 08:56:36,338 INFO  [PEWorker-5] zookeeper.MetaTableLocator: Setting hbase:meta (replicaId=0) location in ZooKeeper as redit_sample-hbase_server3_1676364952.redit_sample-hbase_1676364951,16020,1676364990744
+2023-02-14 08:56:36,379 INFO  [PEWorker-5] procedure2.ProcedureExecutor: Finished subprocedure pid=3, resume processing parent pid=2, ppid=1, state=RUNNABLE:REGION_STATE_TRANSITION_CONFIRM_OPENED, locked=true; TransitRegionStateProcedure table=hbase:meta, region=1588230740, ASSIGN
+2023-02-14 08:56:36,379 INFO  [PEWorker-5] procedure2.ProcedureExecutor: Finished pid=3, ppid=2, state=SUCCESS; org.apache.hadoop.hbase.master.assignment.OpenRegionProcedure in 629msec
+2023-02-14 08:56:36,415 INFO  [PEWorker-6] procedure2.ProcedureExecutor: Finished subprocedure pid=2, resume processing parent pid=1, state=RUNNABLE; InitMetaProcedure table=hbase:meta
+2023-02-14 08:56:36,415 INFO  [PEWorker-6] procedure2.ProcedureExecutor: Finished pid=2, ppid=1, state=SUCCESS; TransitRegionStateProcedure table=hbase:meta, region=1588230740, ASSIGN in 3.6620sec
+2023-02-14 08:56:36,558 INFO  [PEWorker-7] procedure2.ProcedureExecutor: Finished pid=1, state=SUCCESS; InitMetaProcedure table=hbase:meta in 4.0020sec
+2023-02-14 08:56:36,558 INFO  [master/server1:16000:becomeActiveMaster] master.HMaster: Master startup: status=Wait for region servers to report in, state=RUNNING, startTime=1676364991107, completionTime=-1
+2023-02-14 08:56:36,559 INFO  [master/server1:16000:becomeActiveMaster] master.ServerManager: Waiting on regionserver count=3; waited=0ms, expecting min=1 server(s), max=NO_LIMIT server(s), timeout=4500ms, lastChange=0ms
+2023-02-14 08:56:38,065 INFO  [master/server1:16000:becomeActiveMaster] master.ServerManager: Waiting on regionserver count=3; waited=1507ms, expecting min=1 server(s), max=NO_LIMIT server(s), timeout=4500ms, lastChange=-1507ms
+2023-02-14 08:56:39,570 INFO  [master/server1:16000:becomeActiveMaster] master.ServerManager: Waiting on regionserver count=3; waited=3012ms, expecting min=1 server(s), max=NO_LIMIT server(s), timeout=4500ms, lastChange=-3012ms
+2023-02-14 08:56:41,074 INFO  [master/server1:16000:becomeActiveMaster] master.ServerManager: Finished waiting on RegionServer count=3; waited=4516ms, expected min=1 server(s), max=NO_LIMIT server(s), master is running
+2023-02-14 08:56:41,159 INFO  [master/server1:16000:becomeActiveMaster] assignment.AssignmentManager: Number of RegionServers=3
+2023-02-14 08:56:41,159 INFO  [master/server1:16000:becomeActiveMaster] procedure2.TimeoutExecutorThread: ADDED pid=-1, state=WAITING_TIMEOUT; org.apache.hadoop.hbase.master.assignment.AssignmentManager$RegionInTransitionChore; timeout=60000, timestamp=1676365061159
+2023-02-14 08:56:41,159 INFO  [master/server1:16000:becomeActiveMaster] assignment.AssignmentManager: Joined the cluster in 84msec
+2023-02-14 08:56:41,201 INFO  [master/server1:16000:becomeActiveMaster] master.TableNamespaceManager: Namespace table not found. Creating...
+2023-02-14 08:56:41,202 INFO  [master/server1:16000:becomeActiveMaster] master.HMaster: Client=null/null create 'hbase:namespace', {NAME => 'info', VERSIONS => '10', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'true', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '8192'}
+2023-02-14 08:56:41,432 INFO  [RegionOpenAndInitThread-hbase:namespace-pool6-t1] regionserver.HRegion: creating {ENCODED => c7723490318527f739c3a7a21ddf71a5, NAME => 'hbase:namespace,,1676365001202.c7723490318527f739c3a7a21ddf71a5.', STARTKEY => '', ENDKEY => ''}, tableDescriptor='hbase:namespace', {NAME => 'info', VERSIONS => '10', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'true', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '8192'}, regionDir=hdfs://mycluster/hbase/.tmp
+2023-02-14 08:56:41,466 INFO  [RegionOpenAndInitThread-hbase:namespace-pool6-t1] regionserver.HRegion: Closed hbase:namespace,,1676365001202.c7723490318527f739c3a7a21ddf71a5.
+2023-02-14 08:56:41,518 INFO  [PEWorker-9] hbase.MetaTableAccessor: Added 1 regions to meta.
+2023-02-14 08:56:41,536 INFO  [PEWorker-9] hbase.MetaTableAccessor: Updated tableName=hbase:namespace, state=ENABLING in hbase:meta
+2023-02-14 08:56:41,562 INFO  [PEWorker-9] procedure2.ProcedureExecutor: Initialized subprocedures=[{pid=5, ppid=4, state=RUNNABLE:REGION_STATE_TRANSITION_GET_ASSIGN_CANDIDATE; TransitRegionStateProcedure table=hbase:namespace, region=c7723490318527f739c3a7a21ddf71a5, ASSIGN}]
+2023-02-14 08:56:41,576 INFO  [PEWorker-8] procedure.MasterProcedureScheduler: Took xlock for pid=5, ppid=4, state=RUNNABLE:REGION_STATE_TRANSITION_GET_ASSIGN_CANDIDATE; TransitRegionStateProcedure table=hbase:namespace, region=c7723490318527f739c3a7a21ddf71a5, ASSIGN
+2023-02-14 08:56:41,598 INFO  [PEWorker-8] assignment.TransitRegionStateProcedure: Starting pid=5, ppid=4, state=RUNNABLE:REGION_STATE_TRANSITION_GET_ASSIGN_CANDIDATE, locked=true; TransitRegionStateProcedure table=hbase:namespace, region=c7723490318527f739c3a7a21ddf71a5, ASSIGN; rit=OFFLINE, location=redit_sample-hbase_server2_1676364951.redit_sample-hbase_1676364951,16020,1676364990705; forceNewPlan=false, retain=false
+2023-02-14 08:56:41,752 INFO  [master/server1:16000] balancer.BaseLoadBalancer: Reassigned 1 regions. 1 retained the pre-restart assignment. 
+2023-02-14 08:56:41,754 INFO  [PEWorker-10] assignment.RegionStateStore: pid=5 updating hbase:meta row=c7723490318527f739c3a7a21ddf71a5, regionState=OPENING, regionLocation=redit_sample-hbase_server2_1676364951.redit_sample-hbase_1676364951,16020,1676364990705
+2023-02-14 08:56:41,766 INFO  [PEWorker-10] procedure2.ProcedureExecutor: Initialized subprocedures=[{pid=6, ppid=5, state=RUNNABLE; org.apache.hadoop.hbase.master.assignment.OpenRegionProcedure}]
+2023-02-14 08:56:42,285 INFO  [PEWorker-12] assignment.RegionStateStore: pid=5 updating hbase:meta row=c7723490318527f739c3a7a21ddf71a5, regionState=OPEN, openSeqNum=2, regionLocation=redit_sample-hbase_server2_1676364951.redit_sample-hbase_1676364951,16020,1676364990705
+2023-02-14 08:56:42,335 INFO  [PEWorker-12] procedure2.ProcedureExecutor: Finished subprocedure pid=6, resume processing parent pid=5, ppid=4, state=RUNNABLE:REGION_STATE_TRANSITION_CONFIRM_OPENED, locked=true; TransitRegionStateProcedure table=hbase:namespace, region=c7723490318527f739c3a7a21ddf71a5, ASSIGN
+2023-02-14 08:56:42,336 INFO  [PEWorker-12] procedure2.ProcedureExecutor: Finished pid=6, ppid=5, state=SUCCESS; org.apache.hadoop.hbase.master.assignment.OpenRegionProcedure in 524msec
+2023-02-14 08:56:42,376 INFO  [PEWorker-13] procedure2.ProcedureExecutor: Finished subprocedure pid=5, resume processing parent pid=4, state=RUNNABLE:CREATE_TABLE_UPDATE_DESC_CACHE; CreateTableProcedure table=hbase:namespace
+2023-02-14 08:56:42,377 INFO  [PEWorker-13] procedure2.ProcedureExecutor: Finished pid=5, ppid=4, state=SUCCESS; TransitRegionStateProcedure table=hbase:namespace, region=c7723490318527f739c3a7a21ddf71a5, ASSIGN in 773msec
+2023-02-14 08:56:42,502 INFO  [PEWorker-14] hbase.MetaTableAccessor: Updated tableName=hbase:namespace, state=ENABLED in hbase:meta
+2023-02-14 08:56:42,558 INFO  [PEWorker-14] procedure2.ProcedureExecutor: Finished pid=4, state=SUCCESS; CreateTableProcedure table=hbase:namespace in 1.3170sec
+2023-02-14 08:56:42,831 INFO  [PEWorker-15] procedure2.ProcedureExecutor: Finished pid=7, state=SUCCESS; CreateNamespaceProcedure, namespace=default in 236msec
+2023-02-14 08:56:43,065 INFO  [PEWorker-16] procedure2.ProcedureExecutor: Finished pid=8, state=SUCCESS; CreateNamespaceProcedure, namespace=hbase in 200msec
+2023-02-14 08:56:43,099 INFO  [master/server1:16000:becomeActiveMaster] master.HMaster: Master has completed initialization 11.952sec
+2023-02-14 08:56:43,101 INFO  [master/server1:16000:becomeActiveMaster] quotas.MasterQuotaManager: Quota support disabled
+2023-02-14 08:56:43,101 INFO  [master/server1:16000:becomeActiveMaster] zookeeper.ZKWatcher: not a secure deployment, proceeding
+2023-02-14 08:57:00,522 INFO  [main-SendThread(10.2.0.13:2181)] zookeeper.ClientCnxn: Unable to read additional data from server sessionid 0x30000363d140000, likely server has closed socket, closing socket connection and attempting reconnect
+2023-02-14 08:57:00,525 INFO  [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x1553307f-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Unable to read additional data from server sessionid 0x10000363d090002, likely server has closed socket, closing socket connection and attempting reconnect
+2023-02-14 08:57:00,525 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Unable to read additional data from server sessionid 0x20000363d020003, likely server has closed socket, closing socket connection and attempting reconnect
+2023-02-14 08:57:00,837 WARN  [ResponseProcessor for block BP-552657718-10.2.0.10-1676364959254:blk_1073741829_1005] hdfs.DataStreamer: Exception for BP-552657718-10.2.0.10-1676364959254:blk_1073741829_1005
+java.io.EOFException: Unexpected EOF while trying to read response from server
+	at org.apache.hadoop.hdfs.protocolPB.PBHelperClient.vintPrefixed(PBHelperClient.java:402)
+	at org.apache.hadoop.hdfs.protocol.datatransfer.PipelineAck.readFields(PipelineAck.java:213)
+	at org.apache.hadoop.hdfs.DataStreamer$ResponseProcessor.run(DataStreamer.java:1073)
+2023-02-14 08:57:00,838 WARN  [DataStreamer for file /hbase/MasterProcWALs/pv2-00000000000000000001.log block BP-552657718-10.2.0.10-1676364959254:blk_1073741829_1005] hdfs.DataStreamer: Error Recovery for BP-552657718-10.2.0.10-1676364959254:blk_1073741829_1005 in pipeline [DatanodeInfoWithStorage[10.2.0.2:9866,DS-2c92eb36-9f33-4adc-8f31-ef4654a47eac,DISK], DatanodeInfoWithStorage[10.2.0.3:9866,DS-8a3b9fce-a069-4619-aceb-08294d28bf19,DISK], DatanodeInfoWithStorage[10.2.0.4:9866,DS-d7adf8fd-86ad-45e6-8178-3ffc0c71b20a,DISK]]: datanode 0(DatanodeInfoWithStorage[10.2.0.2:9866,DS-2c92eb36-9f33-4adc-8f31-ef4654a47eac,DISK]) is bad.
+2023-02-14 08:57:00,973 INFO  [ReadOnlyZKClient-10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181@0x1553307f-SendThread(10.2.0.13:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.13/10.2.0.13:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-14 08:57:01,177 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.7/10.2.0.7:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-14 08:57:01,178 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.7/10.2.0.7:2181, initiating session
+2023-02-14 08:57:01,180 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.7/10.2.0.7:2181, sessionid = 0x30000363d140000, negotiated timeout = 40000
+2023-02-14 08:57:01,269 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.7/10.2.0.7:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-14 08:57:01,270 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.7/10.2.0.7:2181, initiating session
+2023-02-14 08:57:01,270 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.7/10.2.0.7:2181, sessionid = 0x20000363d020003, negotiated timeout = 40000
+2023-02-14 08:57:01,927 INFO  [master/server1:16000:becomeActiveMaster-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Unable to read additional data from server sessionid 0x20000363d020003, likely server has closed socket, closing socket connection and attempting reconnect
+2023-02-14 08:57:01,927 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Unable to read additional data from server sessionid 0x30000363d140000, likely server has closed socket, closing socket connection and attempting reconnect
