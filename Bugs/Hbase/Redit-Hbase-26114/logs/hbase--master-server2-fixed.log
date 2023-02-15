@@ -1,0 +1,117 @@
+Wed Feb 15 02:52:40 UTC 2023 Starting master on server2
+core file size          (blocks, -c) unlimited
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 62564
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1048576
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) unlimited
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+2023-02-15 02:52:40,926 INFO  [main] master.HMaster: STARTING service HMaster
+2023-02-15 02:52:40,927 INFO  [main] util.VersionInfo: HBase 2.2.2
+2023-02-15 02:52:40,927 INFO  [main] util.VersionInfo: Source code repository git://6ad68c41b902/opt/hbase-rm/output/hbase revision=e6513a76c91cceda95dad7af246ac81d46fa2589
+2023-02-15 02:52:40,927 INFO  [main] util.VersionInfo: Compiled by hbase-rm on Sat Oct 19 10:10:12 UTC 2019
+2023-02-15 02:52:40,927 INFO  [main] util.VersionInfo: From source with checksum 4d23f97701e395c5d34db1882ac5021b
+2023-02-15 02:52:41,051 INFO  [main] util.ServerCommandLine: hbase.tmp.dir: ./tmp
+2023-02-15 02:52:41,051 INFO  [main] util.ServerCommandLine: hbase.rootdir: hdfs://mycluster/hbase
+2023-02-15 02:52:41,051 INFO  [main] util.ServerCommandLine: hbase.cluster.distributed: true
+2023-02-15 02:52:41,051 INFO  [main] util.ServerCommandLine: hbase.zookeeper.quorum: 10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:HBASE_LOGFILE=hbase--master-server2.log
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:JAVA_URL_VERSION=8u242b08
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:JAVA_HOME=/usr/local/openjdk-8
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:LANG=C.UTF-8
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:REDIT_EVENT_SERVER_IP_ADDRESS=172.17.0.1
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:HBASE_REST_OPTS=
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:JVM_PID=218
+2023-02-15 02:52:41,052 INFO  [main] util.ServerCommandLine: env:PWD=/hbase/hbase-2.2.2
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:JAVA_VERSION=8u242
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:FAKETIME_NO_CACHE=1
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_ROOT_LOGGER=INFO,RFA
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_ENV_INIT=true
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_IDENT_STRING=
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_ZNODE_FILE=/tmp/hbase--master.znode
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_LOG_DIR=/hbase/hbase-2.2.2/logs
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_LOG_PREFIX=hbase--master-server2
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:OLDPWD=/
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:FAKETIME_TIMESTAMP_FILE=/redit_libfaketime
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: se/hbase-2.2.2/lib/okhttp-2.4.0.jar:/hbase/hbase-2.2.2/lib/okio-1.4.0.jar:/hbase/hbase-2.2.2/lib/osgi-resource-locator-1.0.1.jar:/hbase/hbase-2.2.2/lib/paranamer-2.3.jar:/hbase/hbase-2.2.2/lib/protobuf-java-2.5.0.jar:/hbase/hbase-2.2.2/lib/snappy-java-1.0.5.jar:/hbase/hbase-2.2.2/lib/spymemcached-2.12.2.jar:/hbase/hbase-2.2.2/lib/validation-api-1.1.0.Final.jar:/hbase/hbase-2.2.2/lib/xmlenc-0.52.jar:/hbase/hbase-2.2.2/lib/xz-1.0.jar:/hbase/hbase-2.2.2/lib/zookeeper-3.4.10.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/audience-annotations-0.5.0.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/commons-logging-1.2.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/findbugs-annotations-1.3.9-1.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/htrace-core4-4.2.0-incubating.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/log4j-1.2.17.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-api-1.7.25.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-log4j12-1.7.25.jar
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_MANAGES_ZK=false
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:REDIT_EVENT_SERVER_PORT_NUMBER=41319
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_AUTOSTART_FILE=/tmp/hbase--master.autostart
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HOSTNAME=server2
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:LD_PRELOAD=/usr/local/lib/faketime/libfaketimeMT.so.1
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_NICENESS=0
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:DONT_FAKE_MONOTONIC=1
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_SECURITY_LOGGER=INFO,RFAS
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_HOME=/hbase/hbase-2.2.2
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:HBASE_THRIFT_OPTS=
+2023-02-15 02:52:41,053 INFO  [main] util.ServerCommandLine: env:SHLVL=2
+2023-02-15 02:52:41,054 INFO  [main] util.ServerCommandLine: env:HOME=/root
+2023-02-15 02:52:41,054 INFO  [main] util.ServerCommandLine: env:MALLOC_ARENA_MAX=4
+2023-02-15 02:52:41,054 INFO  [main] util.ServerCommandLine: vmName=OpenJDK 64-Bit Server VM, vmVendor=Oracle Corporation, vmVersion=25.242-b08
+2023-02-15 02:52:41,054 INFO  [main] util.ServerCommandLine: vmInputArguments=[-Dproc_master, -XX:OnOutOfMemoryError=kill -9 %p, -Dhbase.log.dir=/hbase/hbase-2.2.2/logs, -Dhbase.log.file=hbase--master-server2.log, -Dhbase.home.dir=/hbase/hbase-2.2.2, -Dhbase.id.str=, -Dhbase.root.logger=INFO,RFA, -Dhbase.security.logger=INFO,RFAS]
+2023-02-15 02:52:41,330 INFO  [main] metrics.MetricRegistries: Loaded MetricRegistries class org.apache.hadoop.hbase.metrics.impl.MetricRegistriesImpl
+2023-02-15 02:52:41,351 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-02-15 02:52:41,548 INFO  [main] regionserver.RSRpcServices: master/server2:16000 server-side Connection retries=45
+2023-02-15 02:52:41,561 INFO  [main] ipc.RpcExecutor: Instantiated default.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=3, maxQueueLength=300, handlerCount=30
+2023-02-15 02:52:41,561 INFO  [main] ipc.RpcExecutor: Instantiated priority.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=2, maxQueueLength=300, handlerCount=20
+2023-02-15 02:52:41,561 INFO  [main] ipc.RpcExecutor: Instantiated replication.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=1, maxQueueLength=300, handlerCount=3
+2023-02-15 02:52:41,562 INFO  [main] ipc.RpcExecutor: Instantiated metaPriority.FPBQ.Fifo with queueClass=class java.util.concurrent.LinkedBlockingQueue; numCallQueues=1, maxQueueLength=300, handlerCount=1
+2023-02-15 02:52:41,625 INFO  [main] ipc.RpcServerFactory: Creating org.apache.hadoop.hbase.ipc.NettyRpcServer hosting hbase.pb.MasterService, hbase.pb.RegionServerStatusService, hbase.pb.LockService, hbase.pb.HbckService, hbase.pb.ClientService, hbase.pb.AdminService
+2023-02-15 02:52:41,708 INFO  [main] ipc.NettyRpcServer: Bind to /10.2.0.6:16000
+2023-02-15 02:52:42,117 INFO  [main] fs.HFileSystem: Added intercepting call to namenode#getBlockLocations so can do block reordering using class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2023-02-15 02:52:42,132 INFO  [main] fs.HFileSystem: Added intercepting call to namenode#getBlockLocations so can do block reordering using class org.apache.hadoop.hbase.fs.HFileSystem$ReorderWALBlocks
+2023-02-15 02:52:42,281 INFO  [main] zookeeper.RecoverableZooKeeper: Process identifier=master:16000 connecting to ZooKeeper ensemble=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181
+2023-02-15 02:52:42,285 INFO  [main] zookeeper.ZooKeeper: Client environment:zookeeper.version=3.4.10-39d3a4f269333c922ed3db283be479f9deacaa0f, built on 03/23/2017 10:13 GMT
+2023-02-15 02:52:42,285 INFO  [main] zookeeper.ZooKeeper: Client environment:host.name=server2
+2023-02-15 02:52:42,285 INFO  [main] zookeeper.ZooKeeper: Client environment:java.version=1.8.0_242
+2023-02-15 02:52:42,285 INFO  [main] zookeeper.ZooKeeper: Client environment:java.vendor=Oracle Corporation
+2023-02-15 02:52:42,285 INFO  [main] zookeeper.ZooKeeper: Client environment:java.home=/usr/local/openjdk-8/jre
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: se/hbase-2.2.2/lib/okhttp-2.4.0.jar:/hbase/hbase-2.2.2/lib/okio-1.4.0.jar:/hbase/hbase-2.2.2/lib/osgi-resource-locator-1.0.1.jar:/hbase/hbase-2.2.2/lib/paranamer-2.3.jar:/hbase/hbase-2.2.2/lib/protobuf-java-2.5.0.jar:/hbase/hbase-2.2.2/lib/snappy-java-1.0.5.jar:/hbase/hbase-2.2.2/lib/spymemcached-2.12.2.jar:/hbase/hbase-2.2.2/lib/validation-api-1.1.0.Final.jar:/hbase/hbase-2.2.2/lib/xmlenc-0.52.jar:/hbase/hbase-2.2.2/lib/xz-1.0.jar:/hbase/hbase-2.2.2/lib/zookeeper-3.4.10.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/audience-annotations-0.5.0.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/commons-logging-1.2.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/findbugs-annotations-1.3.9-1.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/htrace-core4-4.2.0-incubating.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/log4j-1.2.17.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-api-1.7.25.jar:/hbase/hbase-2.2.2/lib/client-facing-thirdparty/slf4j-log4j12-1.7.25.jar
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:java.io.tmpdir=/tmp
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:java.compiler=<NA>
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:os.name=Linux
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:os.arch=amd64
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:os.version=5.15.0-60-generic
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:user.name=root
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:user.home=/root
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Client environment:user.dir=/hbase/hbase-2.2.2
+2023-02-15 02:52:42,286 INFO  [main] zookeeper.ZooKeeper: Initiating client connection, connectString=10.2.0.7:2181,10.2.0.6:2181,10.2.0.13:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.PendingWatcher@22bd2039
+2023-02-15 02:52:42,296 INFO  [main-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.6/10.2.0.6:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-15 02:52:42,301 INFO  [main-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.6/10.2.0.6:2181, initiating session
+2023-02-15 02:52:42,313 INFO  [main-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.6/10.2.0.6:2181, sessionid = 0x2000022a63a0001, negotiated timeout = 40000
+2023-02-15 02:52:42,408 INFO  [main] util.log: Logging initialized @1712ms
+2023-02-15 02:52:42,455 INFO  [main] http.HttpRequestLog: Http request log for http.requests.master is not defined
+2023-02-15 02:52:42,462 INFO  [main] http.HttpServer: Added global filter 'safety' (class=org.apache.hadoop.hbase.http.HttpServer$QuotingInputFilter)
+2023-02-15 02:52:42,463 INFO  [main] http.HttpServer: Added global filter 'clickjackingprevention' (class=org.apache.hadoop.hbase.http.ClickjackingPreventionFilter)
+2023-02-15 02:52:42,464 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context master
+2023-02-15 02:52:42,464 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2023-02-15 02:52:42,464 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2023-02-15 02:52:42,469 INFO  [main] http.HttpServer: ASYNC_PROFILER_HOME environment variable and async.profiler.home system property not specified. Disabling /prof endpoint.
+2023-02-15 02:52:42,482 INFO  [main] http.HttpServer: Jetty bound to port 16010
+2023-02-15 02:52:42,483 INFO  [main] server.Server: jetty-9.3.27.v20190418, build timestamp: 2019-04-18T18:11:38Z, git hash: d3e249f86955d04bc646bb620905b7c1bc596a8d
+2023-02-15 02:52:42,507 INFO  [main] handler.ContextHandler: Started o.e.j.s.ServletContextHandler@563a89b5{/logs,file:///hbase/hbase-2.2.2/logs/,AVAILABLE}
+2023-02-15 02:52:42,508 INFO  [main] handler.ContextHandler: Started o.e.j.s.ServletContextHandler@270b6b5e{/static,file:///hbase/hbase-2.2.2/hbase-webapps/static/,AVAILABLE}
+2023-02-15 02:52:42,558 INFO  [main] webapp.StandardDescriptorProcessor: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2023-02-15 02:52:42,579 INFO  [main] handler.ContextHandler: Started o.e.j.w.WebAppContext@244e619a{/,file:///hbase/hbase-2.2.2/hbase-webapps/master/,AVAILABLE}{file:/hbase/hbase-2.2.2/hbase-webapps/master}
+2023-02-15 02:52:42,582 INFO  [main] server.AbstractConnector: Started ServerConnector@9874817{HTTP/1.1,[http/1.1]}{0.0.0.0:16010}
+2023-02-15 02:52:42,583 INFO  [main] server.Server: Started @1887ms
+2023-02-15 02:52:42,585 INFO  [main] master.HMaster: hbase.rootdir=hdfs://mycluster/hbase, hbase.cluster.distributed=true
+2023-02-15 02:52:42,602 INFO  [master/server2:16000:becomeActiveMaster] master.HMaster: Adding backup master ZNode /hbase/backup-masters/server2,16000,1676429561081
+2023-02-15 02:52:42,671 INFO  [master/server2:16000:becomeActiveMaster] master.ActiveMasterManager: Another master is the active master, server1,16000,1676429561085; waiting to become the next active master
+2023-02-15 02:52:44,000 INFO  [master/server2:16000] regionserver.HRegionServer: ClusterId : a795e766-b8d5-4fe9-af10-0660f0d1a9cb
+2023-02-15 02:53:12,146 INFO  [main-SendThread(10.2.0.6:2181)] zookeeper.ClientCnxn: Unable to read additional data from server sessionid 0x2000022a63a0001, likely server has closed socket, closing socket connection and attempting reconnect
+2023-02-15 02:53:13,044 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Opening socket connection to server 10.2.0.7/10.2.0.7:2181. Will not attempt to authenticate using SASL (unknown error)
+2023-02-15 02:53:13,045 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Socket connection established to 10.2.0.7/10.2.0.7:2181, initiating session
+2023-02-15 02:53:13,046 INFO  [main-SendThread(10.2.0.7:2181)] zookeeper.ClientCnxn: Session establishment complete on server 10.2.0.7/10.2.0.7:2181, sessionid = 0x2000022a63a0001, negotiated timeout = 40000
