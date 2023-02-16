@@ -130,7 +130,7 @@ public class ElasticsearchHelper {
 
     public void checkOneServerStatusManyTimes(int serverId) throws RuntimeEngineException, InterruptedException {
         String cmd = "curl -X GET http://localhost:9200/?pretty";
-        for(int i = 0; i < 6; i++){
+        for(int i = 0; i < 10; i++){
             printResult(runner.runtime().runCommandInNode("server" + serverId, cmd));
             Thread.sleep(3000);
         }

@@ -1,0 +1,16 @@
+[2023-02-16 08:10:18,062][INFO ][node                     ] [node-0] version[1.4.5], pid[27], build[2aaf797/2015-04-27T08:06:06Z]
+[2023-02-16 08:10:18,063][INFO ][node                     ] [node-0] initializing ...
+[2023-02-16 08:10:18,064][INFO ][plugins                  ] [node-0] loaded [], sites []
+[2023-02-16 08:10:19,046][INFO ][node                     ] [node-0] initialized
+[2023-02-16 08:10:19,046][INFO ][node                     ] [node-0] starting ...
+[2023-02-16 08:10:19,176][INFO ][transport                ] [node-0] bound_address {inet[/0.0.0.0:9300]}, publish_address {inet[/10.2.0.4:9300]}
+[2023-02-16 08:10:19,182][INFO ][discovery                ] [node-0] es-clusters/Rjywa52OQR27-wRjz9NoCg
+[2023-02-16 08:10:35,710][INFO ][cluster.service          ] [node-0] new_master [node-0][Rjywa52OQR27-wRjz9NoCg][server1][inet[/10.2.0.4:9300]], reason: zen-disco-join (elected_as_master)
+[2023-02-16 08:10:35,719][INFO ][http                     ] [node-0] bound_address {inet[/0.0.0.0:9200]}, publish_address {inet[/10.2.0.4:9200]}
+[2023-02-16 08:10:35,720][INFO ][node                     ] [node-0] started
+[2023-02-16 08:10:36,338][INFO ][cluster.service          ] [node-0] added {[node-2][g-EuApjDSTiDLIaKu8XIKg][server3][inet[/10.2.0.2:9300]],}, reason: zen-disco-receive(join from node[[node-2][g-EuApjDSTiDLIaKu8XIKg][server3][inet[/10.2.0.2:9300]]])
+[2023-02-16 08:10:38,591][INFO ][cluster.service          ] [node-0] added {[node-1][WkPmOGOkQJWxm-u0aKuEeg][server2][inet[/10.2.0.3:9300]],}, reason: zen-disco-receive(join from node[[node-1][WkPmOGOkQJWxm-u0aKuEeg][server2][inet[/10.2.0.3:9300]]])
+[2023-02-16 08:10:38,634][INFO ][gateway                  ] [node-0] recovered [0] indices into cluster_state
+[2023-02-16 08:10:39,710][INFO ][cluster.metadata         ] [node-0] [customer] creating index, cause [api], shards [5]/[1], mappings []
+[2023-02-16 08:10:40,251][WARN ][discovery.zen            ] [node-0] not enough master nodes, current nodes: {[node-0][Rjywa52OQR27-wRjz9NoCg][server1][inet[/10.2.0.4:9300]],[node-2][g-EuApjDSTiDLIaKu8XIKg][server3][inet[/10.2.0.2:9300]],}
+[2023-02-16 08:10:40,251][INFO ][cluster.service          ] [node-0] removed {[node-1][WkPmOGOkQJWxm-u0aKuEeg][server2][inet[/10.2.0.3:9300]],}, reason: zen-disco-node_failed([node-1][WkPmOGOkQJWxm-u0aKuEeg][server2][inet[/10.2.0.3:9300]]), reason transport disconnected
