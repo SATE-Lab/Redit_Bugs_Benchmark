@@ -24,7 +24,7 @@ public class ReditHelper {
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String CompressedPath = workDir + "/../../../Archive/Zookeeper/Original/" + dir + ".tar.gz";
+        String CompressedPath = workDir + "/../../../Archive/Zookeeper/Zookeeper-3479/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-zookeeper")
                 .withService("zookeeper")

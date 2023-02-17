@@ -25,7 +25,7 @@ public class SampleTest {
     private static final Logger logger = LoggerFactory.getLogger(SampleTest.class);
     protected static ReditRunner runner;
     private static ZookeeperHelper helper;
-    private static  ZooKeeper[] zooKeeper = {null, null, null};
+    private static ZooKeeper[] zooKeeper = {null, null, null};
     private static NetPart netPart = null;
     private static String nodePath = "/e1";
 
@@ -102,7 +102,7 @@ public class SampleTest {
            try {
                zooKeeper[1] = new ZooKeeper(runner.runtime().ip("server1") + ":2181",4000, watchedEvent -> countDownLatch2.countDown());
                Stat exists = zooKeeper[1].exists(nodePath, false);
-               logger.info("Node have not been deleted from leader: " + exists.toString());
+               logger.info("******************** Node have not been deleted from leader: " + exists.toString());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
