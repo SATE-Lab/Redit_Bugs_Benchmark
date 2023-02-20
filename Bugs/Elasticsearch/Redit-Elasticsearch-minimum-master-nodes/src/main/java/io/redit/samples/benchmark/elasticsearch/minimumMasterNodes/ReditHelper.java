@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 3;
     private static final int HTTP_PORT = 9200;
-    private static final String dir = "elasticsearch-1.5.0";
+    private static final String dir = "elasticsearch-1.4.0";
     public static String getElasticsearchHomeDir(){
         return "/elasticsearch/" + dir;
     }

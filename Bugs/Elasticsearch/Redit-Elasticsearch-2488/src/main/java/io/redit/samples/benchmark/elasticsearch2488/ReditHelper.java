@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 3;
     private static final int HTTP_PORT = 9200;
-    private static final String dir = "elasticsearch-1.3.0";
+    private static final String dir = "elasticsearch-1.4.0.Beta1";
     public static String getElasticsearchHomeDir(){
         return "/elasticsearch/" + dir;
     }
 
     public static Deployment getDeployment() {
         String workDir = System.getProperty("user.dir");
-        String compressedPath = workDir + "/../../../Archive/Elasticsearch/Original/" + dir + ".tar.gz";
+        String compressedPath = workDir + "/../../../Archive/Elasticsearch/Elasticsearch-2488/" + dir + ".tar.gz";
 
         Deployment.Builder builder = Deployment.builder("sample-elasticsearch")
                 .withService("elasticsearch")

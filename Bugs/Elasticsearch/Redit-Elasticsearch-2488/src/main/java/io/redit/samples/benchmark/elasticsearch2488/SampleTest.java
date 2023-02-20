@@ -114,7 +114,7 @@ public class SampleTest {
         String cmd = "curl  http://localhost:9200/?pretty";
         for (int i = 1; i < ReditHelper.numOfServers + 1; i++) {
             String cmdRes = runner.runtime().runCommandInNode("server" + i, cmd).stdOut();
-            // 若另外一个服务器，也就是直接和master相连的follower选举为了master，则会出现503的情况，据此判断测试是否触发bug
+            // 若另外一个服务器，也就是直接和master相连的follower选举为master，则会出现503的情况，据此判断测试是否触发bug
             if(cmdRes.contains("503")){
                 System.out.println(cmdRes);
                 return false;
