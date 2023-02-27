@@ -20,7 +20,7 @@ public class ReditHelper {
         Deployment.Builder builder = Deployment.builder("sample-kafka")
                 .withService("kafka")
                 .applicationPath(kafkaCompressedPath, "/kafka",  PathAttr.COMPRESSED)
-                .dockerImageName("mengpo1106/kafka").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getKafkaHomeDir() + "/libs/*.jar")
                 .logDirectory(getKafkaHomeDir() + "/logs")
                 .serviceType(ServiceType.JAVA).and();

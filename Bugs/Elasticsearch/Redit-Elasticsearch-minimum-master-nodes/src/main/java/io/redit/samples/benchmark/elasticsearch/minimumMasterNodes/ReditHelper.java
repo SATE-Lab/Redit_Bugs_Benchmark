@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ReditHelper {
     public static int numOfServers = 3;
     private static final int HTTP_PORT = 9200;
-    private static final String dir = "elasticsearch-1.4.0";
+    private static final String dir = "elasticsearch-1.5.0";
     public static String getElasticsearchHomeDir(){
         return "/elasticsearch/" + dir;
     }
@@ -28,7 +28,7 @@ public class ReditHelper {
         Deployment.Builder builder = Deployment.builder("sample-elasticsearch")
                 .withService("elasticsearch")
                 .applicationPath(compressedPath,  "/elasticsearch",  PathAttr.COMPRESSED)
-                .dockerImageName("mengpo1106/elasticsearch").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getElasticsearchHomeDir() + "/lib/*.jar")
                 .logDirectory("/var/log/elasticsearch")
                 .serviceType(ServiceType.JAVA).and();

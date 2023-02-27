@@ -28,7 +28,7 @@ public class ReditHelper {
         Deployment.Builder builder = Deployment.builder("sample-cassandra")
                 .withService("cassandra")
                 .applicationPath(compressedPath, "/cassandra",  PathAttr.COMPRESSED)
-                .dockerImageName("mengpo1106/cassandra").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getCassandraHomeDir() + "/lib/*.jar")
                 .logDirectory(getCassandraHomeDir() + "/logs")
                 .serviceType(ServiceType.JAVA).and();

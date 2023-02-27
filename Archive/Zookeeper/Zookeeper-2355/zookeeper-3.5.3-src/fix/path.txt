@@ -1,3 +1,0 @@
-src/java/main/org/apache/zookeeper/server/quorum/Learner.java
-src/java/main/org/apache/zookeeper/server/quorum/QuorumPeer.java
-src/java/main/org/apache/zookeeper/server/quorum/QuorumPeerMain.java

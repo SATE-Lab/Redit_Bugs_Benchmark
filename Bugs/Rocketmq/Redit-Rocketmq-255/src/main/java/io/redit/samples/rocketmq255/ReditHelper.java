@@ -28,7 +28,7 @@ public class ReditHelper {
         Deployment.Builder builder = Deployment.builder("sample-rocketmq")
                 .withService("rocketmq")
                 .applicationPath(compressedPath, "/rocketmq",  PathAttr.COMPRESSED)
-                .dockerImageName("mengpo1106/rocketmq").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getRocketmqHomeDir() + "/lib/*.jar")
                 .logDirectory(getRocketmqHomeDir() + "/logs")
                 .serviceType(ServiceType.JAVA).and();

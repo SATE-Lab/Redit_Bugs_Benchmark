@@ -28,7 +28,7 @@ public class ReditHelper {
         Deployment.Builder builder = Deployment.builder("sample-elasticsearch")
                 .withService("elasticsearch")
                 .applicationPath(compressedPath,  "/elasticsearch",  PathAttr.COMPRESSED)
-                .dockerImageName("mengpo1106/elasticsearch").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getElasticsearchHomeDir() + "/lib/*.jar")
                 .logDirectory("/var/log/elasticsearch")
                 .serviceType(ServiceType.JAVA).and();

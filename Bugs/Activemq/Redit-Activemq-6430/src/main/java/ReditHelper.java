@@ -27,7 +27,7 @@ public class ReditHelper {
                 .applicationPath("conf/jetty.xml", getRocketmq1HomeDir() + "/conf/jetty.xml")
                 .applicationPath("conf/jetty.xml", getRocketmq2HomeDir() + "/conf/jetty.xml")
                 .applicationPath("conf/jetty.xml", getRocketmq3HomeDir() + "/conf/jetty.xml")
-                .dockerImageName("mengpo1106/activemq").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getRocketmq1HomeDir() + "/lib/*.jar")
                 .libraryPath(getRocketmq2HomeDir() + "/lib/*.jar")
                 .libraryPath(getRocketmq3HomeDir() + "/lib/*.jar")

@@ -30,7 +30,7 @@ public class ReditHelper {
                 .withService("zookeeper")
                 .applicationPath(CompressedPath, "/zookeeper",  PathAttr.COMPRESSED)
                 .applicationPath("conf/zoo.cfg", getZookeeperHomeDir() + "/conf/zoo.cfg")
-                .dockerImageName("mengpo1106/zookeeper").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getZookeeperHomeDir() + "/lib/*.jar")
                 .logDirectory(getZookeeperHomeDir() + "/logs")
                 .serviceType(ServiceType.JAVA).and();

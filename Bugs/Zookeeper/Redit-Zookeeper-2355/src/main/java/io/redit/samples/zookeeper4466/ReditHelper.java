@@ -15,7 +15,6 @@ public class ReditHelper {
     public static int numOfServers = 3;
     public static final int HTTP_PORT = 2181;
     public static final String dir = "apache-zookeeper-3.6.0-bin";
-
     public static String getZookeeperHomeDir(){
         return "/zookeeper/" + dir;
     }
@@ -28,10 +27,10 @@ public class ReditHelper {
                 .withService("zookeeper")
                 .applicationPath(compressedPath, "/zookeeper",  PathAttr.COMPRESSED)
                 .applicationPath("conf/zoo.cfg", getZookeeperHomeDir() + "/conf/zoo.cfg")
-                .dockerImageName("mengpo1106/zookeeper").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getZookeeperHomeDir() + "/lib/*.jar")
                 .logDirectory(getZookeeperHomeDir() + "/logs")
-                .environmentVariable("ZOO_LOG_DIR", "/zookeeper/apache-zookeeper-3.4.8-bin/logs")
+                .environmentVariable("ZOO_LOG_DIR", "/zookeeper/" + dir + "/logs")
                 .serviceType(ServiceType.JAVA).and();
 
         builder.withService("server", "zookeeper").tcpPort(HTTP_PORT).and()

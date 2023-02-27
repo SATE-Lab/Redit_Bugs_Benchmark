@@ -34,7 +34,7 @@ public class ReditHelper {
                 .applicationPath(zookeeperCompressedPath, "/zookeeper",  PathAttr.COMPRESSED)
                 .applicationPath("conf/zoo.cfg", getZookeeperHomeDir() + "/conf/zoo.cfg")
                 .applicationPath(kafkaCompressedPath, "/kafka",  PathAttr.COMPRESSED)
-                .dockerImageName("mengpo1106/kafka").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .libraryPath(getZookeeperHomeDir() + "/lib/*.jar")
                 .libraryPath(getKafkaHomeDir() + "/libs/*.jar")
                 .logDirectory(getZookeeperHomeDir() + "/logs")

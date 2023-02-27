@@ -43,7 +43,7 @@ public class ReditHelper {
                 .applicationPath(hadoopCompressedPath, "/hadoop",  PathAttr.COMPRESSED)
                 .applicationPath("conf/hdfs-site.xml", getHadoopHomeDir() + "/etc/hadoop/hdfs-site.xml")
                 .applicationPath("conf/core-site.xml", getHadoopHomeDir() + "/etc/hadoop/core-site.xml")
-                .dockerImageName("mengpo1106/hadoop").dockerFileAddress("docker/Dockerfile", true)
+                .dockerImageName("mengpo1106/redit").dockerFileAddress("docker/Dockerfile", true)
                 .environmentVariable("HADOOP_HOME", getHadoopHomeDir()).environmentVariable("HADOOP_HEAPSIZE_MAX", "1g")
                 .libraryPath(getHadoopHomeDir() + "/share/hadoop/**/*.jar")
                 .libraryPath(getHadoopHomeDir() + "/share/hadoop/**/*.java")
