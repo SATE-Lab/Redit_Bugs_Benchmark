@@ -2,7 +2,7 @@
 
 ### Details
 
-Title: *noLocal=true in durable subscriptions is ignored after reconnect*
+Title: ***noLocal=true in durable subscriptions is ignored after reconnect***
 
 JIRA link：[https://issues.apache.org/jira/browse/AMQ-6430](https://issues.apache.org/jira/browse/AMQ-6430)
 
