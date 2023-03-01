@@ -1,7 +1,9 @@
 # Redit-ActiveMQ-6430
 
 ### Details
+
 Title: *noLocal=true in durable subscriptions is ignored after reconnect*
+
 JIRA link：[https://issues.apache.org/jira/browse/AMQ-6430](https://issues.apache.org/jira/browse/AMQ-6430)
 
 |         Label         |       Value       |      Label      |        Value        |
@@ -29,6 +31,9 @@ Steps to reproduce：
 ### Patch 
 
 Status：Available
+
 Link：[https://github.com/apache/activemq/commit/e0c70b8](https://github.com/apache/activemq/commit/e0c70b8)
+
 Fix version：5.14.0
+
 Regression testing path：Archive/Activemq/Activemq-6430/activemq-parent-5.14.0-src/fix/
