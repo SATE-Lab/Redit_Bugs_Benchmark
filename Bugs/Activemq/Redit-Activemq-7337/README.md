@@ -1,19 +1,20 @@
 # Redit-ActiveMQ-7337
 
 ### Details
-Title: Slow consumer with prefetch 0 fails to re-establish message pull state after failover
+
+Title: ***Slow consumer with prefetch 0 fails to re-establish message pull state after failover***
+
+JIRA link：[https://issues.apache.org/jira/browse/AMQ-7337](https://issues.apache.org/jira/browse/AMQ-7337)
 
 |         Label         |       Value       |      Label      |        Value        |
 |:---------------------:|:-----------------:|:---------------:|:-------------------:|
 |       **Type**        |        Bug        |  **Priority**   |        Major        |
 |      **Status**       |       OPEN        | **Resolution**  |     Unresolved      |
-| **Affects Version/s** |   5.15.2, 5.15.9  | **Component/s** |         None        |
+| **Affects Version/s** |   5.15.2, 5.15.9  | **Fix Version/s** |       None        |
 
 ### Description
 
-Periodically, I have a prefetch 0 consumer that stops receiving messages from the broker when it is idle for an extended period of time before a broker failover occurs.
-Upon a re-connection, the connection (and consumer) is successfully re-established with the new broker, but the consumer will never receive messages again.
-There are many WARN lines in the logs. However, none of these correspond with the session for the consumer that is not receiving messages. These all correspond to subscriptions that have been closed:
+Periodically, I have a prefetch 0 consumer that stops receiving messages from the broker when it is idle for an extended period of time before a broker failover occurs. Upon a re-connection, the connection (and consumer) is successfully re-established with the new broker, but the consumer will never receive messages again. There are many WARN lines in the logs. However, none of these correspond with the session for the consumer that is not receiving messages. These all correspond to subscriptions that have been closed:
 
 ```
 2019-11-05 11:24:14,490 [ActiveMQ Transport: tcp:///127.0.0.1:58742@61616] WARN - Async error occurred: java.lang.IllegalArgumentException: The subscription does not exist: ID:local-58699-1572981850004-8:1:1799:1
@@ -46,9 +47,17 @@ Bumping up the cache size seems to defer the problem, allowing for more consumer
 
 ### Testcase
 
-Start an activemq cluster, start a prefetch 0 consumer that stops receiving messages from brokers when it is idle for a long time before broker failover occurs. At this point the simulated node crashes, and upon reconnection, the connection (and consumer) is successfully re-established with the new broker, but the consumer will never receive messages again. and throws an exception:
+Reproduced version：5.15.9
+
+Steps to reproduce：
+1. Create an ActiveMQConnectionFactory object and connect to the cluster.
+2. Start a prefetch 0 consumer that stops receiving messages from brokers when it is idle for a long time before broker failover occurs.
+3. Simulated node crashes, and upon reconnection, the connection (and consumer) is successfully re-established with the new broker, but the consumer will never receive messages again. and throws an exception:
 
 ```
 java.lang.IllegalArgumentException: The subscription does not exist: ID:zmb-virtual-machine-39687-1664182626894-1:1:655:1
 ```
- 
+
+### Patch 
+
+Status：Not submitted
