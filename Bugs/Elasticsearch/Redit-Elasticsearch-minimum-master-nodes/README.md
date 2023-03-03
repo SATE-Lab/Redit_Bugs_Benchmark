@@ -36,7 +36,7 @@ Status：Unavailable
 
 Link：[https://github.com/elastic/elasticsearch/pull/8321/commits/31c2f55724be555fcd37ed42cf9b6e3b05705fdb](https://github.com/elastic/elasticsearch/pull/8321/commits/31c2f55724be555fcd37ed42cf9b6e3b05705fdb)
 
-The official version 1.5.0 fixed this defect by adding verification, which does not solve this problem in my opinion. When a node in the cluster exits due to a crash, the cluster still cannot elect a new master. I verified this on version 1.5.0. I filed this issue on the Elastic website: 
+The official version 1.5.0 fixed this defect by adding verification, which does not solve this problem in my opinion. When a node in the cluster exits due to a crash, the cluster still cannot elect a new master. I verified this on version 1.5.0 and filed this issue on the Elastic website: 
 [https://discuss.elastic.co/t/prevent-setting-minimum-master-nodes-to-more-than-the-current-node-count/326536](https://discuss.elastic.co/t/prevent-setting-minimum-master-nodes-to-more-than-the-current-node-count/326536)
 
 
