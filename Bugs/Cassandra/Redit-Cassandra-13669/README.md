@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: Error when starting cassandra: Unable to make UUID from 'aa' (SASI index)
+Title: ***Error when starting cassandra: Unable to make UUID from 'aa' (SASI index)***
+
+JIRA link：[https://issues.apache.org/jira/browse/CASSANDRA-13669](https://issues.apache.org/jira/browse/CASSANDRA-13669)
 
 |         Label         |                  Value                   |      Label      |     Value      |
 |:---------------------:|:----------------------------------------:|:---------------:|:--------------:|
 |       **Type**        |                   Bug                    |  **Priority**   |     Urgent     |
 |      **Status**       |                 RESOLVED                 | **Resolution**  |     Fixed      |
-|   **Since Version**   |                   3.9                    | **Component/s** |  Feature/SASI  |
+|   **Since Version**   |                   3.9                    | **Fix Version/s** | 3.11.3, 4.0-alpha1, 4.0 |
 
 ### Description
 
@@ -53,14 +55,32 @@ ERROR 09:09:20 Exception in thread Thread[PerDiskMemtableFlushWriter_0:1,5,main]
 org.apache.cassandra.serializers.MarshalException: Unable to make UUID from 'aa'
 	at org.apache.cassandra.db.marshal.UUIDType.fromString(UUIDType.java:118) ~[apache-cassandra-3.9.jar:3.9]
 	at org.apache.cassandra.index.sasi.analyzer.StandardAnalyzer.hasNext(StandardAnalyzer.java:168) ~[apache-cassandra-3.9.jar:3.9]
-    ......
+    	...
 ```
 
 ### Testcase
 
-Start the cassandra cluster, create keyspaces, tables, indexes and add data according to the information provided by the author, restart node 1, and restart the service. Crash on startup: 
+Reproduced version：3.9
+
+Steps to reproduce：
+1. Create a client connection cluster, create a key space, column cluster, index and insert test data.
+2. Inject node crash failure, restart "server1" node.
+3. Check the running status of the server1 node and find that it failed to start.
+4. Check the logs, exceptions are thrown on startup:
+
 ```
-ERROR [PerDiskMemtableFlushWriter_0:1] 2022-09-05 07:38:25,688 CassandraDaemon.java:226 - Exception in thread Thread[PerDiskMemtableFlushWriter_0:1,5,main]
-    org.apache.cassandra.serializers.MarshalException: Unable to make UUID from 'aa'
-    ......
+ERROR [PerDiskMemtableFlushWriter_0:1] 2023-01-12 09:25:10,089 CassandraDaemon.java:228 - Exception in thread Thread[PerDiskMemtableFlushWriter_0:1,5,main]
+org.apache.cassandra.serializers.MarshalException: Unable to make UUID from 'aa'
+	at org.apache.cassandra.db.marshal.UUIDType.fromString(UUIDType.java:118) ~[apache-cassandra-3.11.3.jar:3.11.3-SNAPSHOT]
+	...
 ```
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/cassandra/commit/ea62d8862c311e3d9b64d622bea0a68d3825aa7d](https://github.com/apache/cassandra/commit/ea62d8862c311e3d9b64d622bea0a68d3825aa7d)
+
+Fix version：3.11.3
+
+Regression testing path：Archive/Cassandra/Cassandra-13669/apache-cassandra-3.11.3-src/fix/
