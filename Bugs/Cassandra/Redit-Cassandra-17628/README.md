@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: CQL writetime and ttl functions should be forbidden for multicell columns
+Title: ***CQL writetime and ttl functions should be forbidden for multicell columns***
+
+JIRA link：[https://issues.apache.org/jira/browse/CASSANDRA-17628](https://issues.apache.org/jira/browse/CASSANDRA-17628)
 
 |         Label         |                  Value                   |      Label      |     Value      |
 |:---------------------:|:----------------------------------------:|:---------------:|:--------------:|
 |       **Type**        |                   Bug                    |  **Priority**   |    Normal      |
 |      **Status**       |                 RESOLVED                 | **Resolution**  |     Fixed      |
-| **Affects Version/s** |                  None                    | **Component/s** |  CQL/Semantics |
+| **Affects Version/s** |                  None                    | **Fix Version/s** |  3.0.28, 3.11.14, 4.0.5, 4.1-alpha1, 4.1, 4.2 |
 
 ### Description
 
@@ -35,4 +37,18 @@ SELECT writetime(ft) FROM t; -- allowed
 
 ### Testcase
 
-Start a Cassandra cluster, define a cluster class to connect to the cluster, and get the session object. Create a keyspace, customize the data type UDT and create a column family containing that type. Tests whether the writetime and ttl functions are currently prohibited for collections and UDTs.
+Reproduced version：3.11.6
+
+Steps to reproduce：
+1. Create a client connection cluster, create a keyspace, customize the data type UDT and create a column family containing that type.
+2. Tests whether the writetime and ttl functions of aggregates and UDTs are currently disabled.
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/cassandra/pull/1690/commits/aaabc0991f24652e534e4dde7440fac94ee9e419](https://github.com/apache/cassandra/pull/1690/commits/aaabc0991f24652e534e4dde7440fac94ee9e419)
+
+Fix version：3.11.6
+
+Regression testing path：Archive/Cassandra/Cassandra-17628/apache-cassandra-3.11.6-src/fix/
