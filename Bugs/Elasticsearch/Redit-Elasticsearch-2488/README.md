@@ -57,7 +57,8 @@ Steps to reproduce：
 4. If that follower elects itself as the new master, there will be 2 masters in the cluster at the same time according to description.
 5. Run `curl localhost:9200/_cat/master?v` within the master and the follower which thinks itself to be the master, and two different master ip addresses is shown in the console.
 6. This result also reveled by the log files of the 3 nodes, in which 2 nodes declared themselves as a master.
-7. Noted that due to the election mechanism of elasticsearch, not every single test can trigger this bug.
+
+**Noted that due to the election mechanism of elasticsearch, not every single test can trigger this bug.**
 
 ### Patch 
 
