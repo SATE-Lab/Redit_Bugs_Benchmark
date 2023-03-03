@@ -58,12 +58,6 @@ WriteFailure: Error from server: code=1500 [Replica(s) failed to execute write] 
 
 ### Testcase
 
-After starting the cluster, create keyspace and table respectively, create custom method and MATERIALIZED VIEW, then restart node one, restart cassandra service and execute an insert sql, throw exception Cassandra failure during write query at consistency LOCAL_ONE (1 responses were required but only 0 replica responded, 2 failed), the exception information provided by the author is consistent with the system.log
-
-启动集群后，分别创建keyspace和table，创建custom method和MATERIALIZED VIEW，然后重启节点一，重启cassandra服务并执行insert sql，在一致性LOCAL_ONE下抛异常Cassandra failure during write query (1 responses were required but only 0 replica responded, 2 failed），作者提供的异常信息与system.log一致
-
-### Testcase
-
 Reproduced version：3.11.6
 
 Steps to reproduce：
