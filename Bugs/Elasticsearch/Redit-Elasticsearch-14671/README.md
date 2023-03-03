@@ -6,7 +6,7 @@ Title: ***Do not allow stale replicas to automatically be promoted to primary***
 
 Github link: [https://github.com/elastic/elasticsearch/issues/14671](https://github.com/elastic/elasticsearch/issues/14671)
 
-lasticsearch official resiliency page: [https://www.elastic.co/guide/en/elasticsearch/resiliency/current/index.html](https://www.elastic.co/guide/en/elasticsearch/resiliency/current/index.html)
+Elasticsearch official resiliency page: [https://www.elastic.co/guide/en/elasticsearch/resiliency/current/index.html](https://www.elastic.co/guide/en/elasticsearch/resiliency/current/index.html)
 
 ### Description
 
