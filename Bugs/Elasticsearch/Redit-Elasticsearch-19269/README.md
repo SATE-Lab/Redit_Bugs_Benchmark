@@ -35,8 +35,9 @@ The _version field of these reads may not uniquely identify the document’s ver
 
 ## Testcase
 
-Elasticsearch version: 2.3.0
+Reproduced version：2.3.0
 
+Steps to reproduce：
 1. Edit elasticsearch.yml and make the following changes
     - discovery.zen.fd.ping_timeout: 5s
     - discovery.zen.fd.ping_retries: 1
