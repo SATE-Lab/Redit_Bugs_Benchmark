@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: Commit log replay failure for static columns with collections in clustering keys
+Title: ***Commit log replay failure for static columns with collections in clustering keys***
+
+JIRA link：[https://issues.apache.org/jira/browse/CASSANDRA-14365](https://issues.apache.org/jira/browse/CASSANDRA-14365)
 
 |         Label         |                  Value                   |      Label      |     Value      |
 |:---------------------:|:----------------------------------------:|:---------------:|:--------------:|
 |       **Type**        |                   Bug                    |  **Priority**   |     Normal     |
 |      **Status**       |                 RESOLVED                 | **Resolution**  |     Fixed      |
-|   **Since Version**   |                  2.1.0                   | **Component/s** | Legacy/Core |
+|   **Since Version**   |                  2.1.0                   | **Fix Version/s** | 2.2.17, 3.0.21, 3.11.7, 4.0-alpha4, 4.0 |
 
 ### Description
 
@@ -37,15 +39,7 @@ Outcome:
 ERROR [main] 2018-04-05 04:58:23,741 JVMStabilityInspector.java:99 - Exiting due to error while processing commit log during initialization.
 org.apache.cassandra.db.commitlog.CommitLogReplayer$CommitLogReplayException: Unexpected error deserializing mutation; saved to /tmp/mutation3825739904516830950dat.  This may be caused by replaying a mutation against a table with the same name but incompatible schema.  Exception follows: org.apache.cassandra.serializers.MarshalException: Not enough bytes to read a set
         at org.apache.cassandra.db.commitlog.CommitLogReplayer.handleReplayError(CommitLogReplayer.java:638) [main/:na]
-        at org.apache.cassandra.db.commitlog.CommitLogReplayer.replayMutation(CommitLogReplayer.java:565) [main/:na]
-        at org.apache.cassandra.db.commitlog.CommitLogReplayer.replaySyncSection(CommitLogReplayer.java:517) [main/:na]
-        at org.apache.cassandra.db.commitlog.CommitLogReplayer.recover(CommitLogReplayer.java:397) [main/:na]
-        at org.apache.cassandra.db.commitlog.CommitLogReplayer.recover(CommitLogReplayer.java:143) [main/:na]
-        at org.apache.cassandra.db.commitlog.CommitLog.recover(CommitLog.java:181) [main/:na]
-        at org.apache.cassandra.db.commitlog.CommitLog.recover(CommitLog.java:161) [main/:na]
-        at org.apache.cassandra.service.CassandraDaemon.setup(CassandraDaemon.java:284) [main/:na]
-        at org.apache.cassandra.service.CassandraDaemon.activate(CassandraDaemon.java:533) [main/:na]
-        at org.apache.cassandra.service.CassandraDaemon.main(CassandraDaemon.java:642) [main/:na]
+        ...
 ```
 
 I haven't investigated if there are other more subtle issues caused by these cells failing to validate other places in the code, but I believe the fix for this is to check for 0 byte length collections and accept them as valid as we do with other types.
@@ -54,4 +48,28 @@ I haven't had a chance for any extensive testing but this naive patch seems to h
 
 ### Testcase
 
-Start the cluster, create keyspaces and tables, set frozen<map<text, text>> fields in the table, insert data, and the static cells are empty. Rebooting node 1, crashes on startup: JVMStabilityInspector.java:99 - Exiting due to error while processing commit log during initialization.
+Reproduced version：2.2.16
+
+Steps to reproduce：
+1. Create a client connection cluster, create a key space, column cluster and insert test data.
+2. Inject node crash failure, restart "server1" node.
+3. Check the running status of the server1 node and find that it failed to start.
+4. Check the logs, exceptions are thrown on startup:
+
+```
+INFO  [main] 2023-01-04 10:19:04,939 CommitLog.java:149 - Replaying /opt/cassandra/commitlog_directory/CommitLog-5-1672827512097.log, /opt/cassandra/commitlog_directory/CommitLog-5-1672827512098.log
+ERROR [main] 2023-01-04 10:19:04,978 JVMStabilityInspector.java:99 - Exiting due to error while processing commit log during initialization.
+org.apache.cassandra.db.commitlog.CommitLogReplayer$CommitLogReplayException: Unexpected error deserializing mutation; saved to /tmp/mutation5509535472276335289dat.  This may be caused by replaying a mutation against a table with the same name but incompatible schema.  Exception follows: org.apache.cassandra.serializers.MarshalException: Not enough bytes to read a set
+	at org.apache.cassandra.db.commitlog.CommitLogReplayer.handleReplayError(CommitLogReplayer.java:638) [apache-cassandra-2.2.16.jar:2.2.16]
+    ...
+```
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/cassandra/commit/ae326eed2aa8f9c761fc7a0a872ce8172fde2f0f](https://github.com/apache/cassandra/commit/ae326eed2aa8f9c761fc7a0a872ce8172fde2f0f)
+
+Fix version：2.2.16
+
+Regression testing path：Archive/Cassandra/Cassandra-14365/apache-cassandra-2.2.16-src/fix/
