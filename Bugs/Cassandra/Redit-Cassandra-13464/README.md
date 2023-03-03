@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: Failed to create Materialized view with a specific token range
+Title: ***Failed to create Materialized view with a specific token range***
+
+JIRA link：[https://issues.apache.org/jira/browse/CASSANDRA-13464](https://issues.apache.org/jira/browse/CASSANDRA-13464)
 
 |         Label         |                  Value                   |      Label      |     Value      |
 |:---------------------:|:----------------------------------------:|:---------------:|:--------------:|
 |       **Type**        |                   Bug                    |  **Priority**   |      Low       |
 |      **Status**       |                 RESOLVED                 | **Resolution**  |     Fixed      |
-| **Affects Version/s** |                  3.0.0                   | **Component/s** | Feature/Materialized Views |
+| **Affects Version/s** |                  3.0.0                   | **Fix Version/s** | 3.0.25, 3.11.11, 4.0.1 |
 
 ### Description
 
@@ -63,45 +65,41 @@ WARN  [SharedPool-Worker-1] 2017-04-19 18:44:07,263 FBUtilities.java:337 - Trigg
 ERROR [SharedPool-Worker-1] 2017-04-19 18:46:10,072 QueryMessage.java:128 - Unexpected error during query
 java.lang.ClassCastException: org.apache.cassandra.cql3.TokenRelation cannot be cast to org.apache.cassandra.cql3.SingleColumnRelation
 	at org.apache.cassandra.db.view.View.relationsToWhereClause(View.java:275) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.statements.CreateViewStatement.announceMigration(CreateViewStatement.java:219) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.statements.SchemaAlteringStatement.execute(SchemaAlteringStatement.java:93) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.QueryProcessor.processStatement(QueryProcessor.java:206) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.QueryProcessor.process(QueryProcessor.java:237) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.QueryProcessor.process(QueryProcessor.java:222) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.transport.messages.QueryMessage.execute(QueryMessage.java:115) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.transport.Message$Dispatcher.channelRead0(Message.java:513) [apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.transport.Message$Dispatcher.channelRead0(Message.java:407) [apache-cassandra-3.0.13.jar:3.0.13]
-	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.access$600(AbstractChannelHandlerContext.java:35) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at io.netty.channel.AbstractChannelHandlerContext$7.run(AbstractChannelHandlerContext.java:348) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_121]
-	at org.apache.cassandra.concurrent.AbstractLocalAwareExecutorService$FutureTask.run(AbstractLocalAwareExecutorService.java:164) [apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.concurrent.SEPWorker.run(SEPWorker.java:105) [apache-cassandra-3.0.13.jar:3.0.13]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+	...
 ERROR [SharedPool-Worker-1] 2017-04-19 18:46:10,073 ErrorMessage.java:349 - Unexpected exception during request
 java.lang.ClassCastException: org.apache.cassandra.cql3.TokenRelation cannot be cast to org.apache.cassandra.cql3.SingleColumnRelation
 	at org.apache.cassandra.db.view.View.relationsToWhereClause(View.java:275) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.statements.CreateViewStatement.announceMigration(CreateViewStatement.java:219) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.statements.SchemaAlteringStatement.execute(SchemaAlteringStatement.java:93) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.QueryProcessor.processStatement(QueryProcessor.java:206) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.QueryProcessor.process(QueryProcessor.java:237) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.cql3.QueryProcessor.process(QueryProcessor.java:222) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.transport.messages.QueryMessage.execute(QueryMessage.java:115) ~[apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.transport.Message$Dispatcher.channelRead0(Message.java:513) [apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.transport.Message$Dispatcher.channelRead0(Message.java:407) [apache-cassandra-3.0.13.jar:3.0.13]
-	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:357) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at io.netty.channel.AbstractChannelHandlerContext.access$600(AbstractChannelHandlerContext.java:35) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at io.netty.channel.AbstractChannelHandlerContext$7.run(AbstractChannelHandlerContext.java:348) [netty-all-4.0.44.Final.jar:4.0.44.Final]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_121]
-	at org.apache.cassandra.concurrent.AbstractLocalAwareExecutorService$FutureTask.run(AbstractLocalAwareExecutorService.java:164) [apache-cassandra-3.0.13.jar:3.0.13]
-	at org.apache.cassandra.concurrent.SEPWorker.run(SEPWorker.java:105) [apache-cassandra-3.0.13.jar:3.0.13]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+	...
 INFO  [IndexSummaryManager:1] 2017-04-19 19:20:43,246 IndexSummaryRedistribution.java:74 - Redistributing index summaries
 ```
 
-
 ### Testcase
 
-Start a Cassandra cluster, define a cluster class to connect to the cluster, and get the session object. Create key space, column family and insert test data, query data according to token. Finally, execute "CREATE MATERIALIZED VIEW ..." to throw an exception.
+Reproduced version：3.11.6
+
+Steps to reproduce：
+1. Create a client to connect to the cluster and get the session object.
+2. Create key space, column family and insert test data, and query data according to token.
+3. Create Materialized view with a specific token range, throws an exception:
+
+```
+INFO  [MigrationStage:1] 2022-11-14 08:40:14,106 ColumnFamilyStore.java:427 - Initializing test.test
+ERROR [Native-Transport-Requests-1] 2022-11-14 08:40:17,054 QueryMessage.java:129 - Unexpected error during query
+java.lang.ClassCastException: org.apache.cassandra.cql3.TokenRelation cannot be cast to org.apache.cassandra.cql3.SingleColumnRelation
+	at org.apache.cassandra.db.view.View.relationsToWhereClause(View.java:262) ~[apache-cassandra-3.11.6.jar:3.11.6]
+	...
+ERROR [Native-Transport-Requests-1] 2022-11-14 08:40:17,055 ErrorMessage.java:384 - Unexpected exception during request
+java.lang.ClassCastException: org.apache.cassandra.cql3.TokenRelation cannot be cast to org.apache.cassandra.cql3.SingleColumnRelation
+	at org.apache.cassandra.db.view.View.relationsToWhereClause(View.java:262) ~[apache-cassandra-3.11.6.jar:3.11.6]
+	...
+```
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/cassandra/commit/44604b7316fcbfd7d0d7425e75cd7ebe267e3247](https://github.com/apache/cassandra/commit/44604b7316fcbfd7d0d7425e75cd7ebe267e3247)
+
+Fix version：3.11.6
+
+Regression testing path：Archive/Cassandra/Cassandra-13464/apache-cassandra-3.11.6-src/fix/
