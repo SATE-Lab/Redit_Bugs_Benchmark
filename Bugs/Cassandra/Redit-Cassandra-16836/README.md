@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: Materialized views incorrect quoting of UDF
+Title: ***Materialized views incorrect quoting of UDF***
+
+JIRA link：[https://issues.apache.org/jira/browse/CASSANDRA-16836](https://issues.apache.org/jira/browse/CASSANDRA-16836)
 
 |         Label         |                  Value                   |      Label      |     Value      |
 |:---------------------:|:----------------------------------------:|:---------------:|:--------------:|
 |       **Type**        |                   Bug                    |  **Priority**   |     Normal     |
 |      **Status**       |                 RESOLVED                 | **Resolution**  |     Fixed      |
-|   **Since Version**   |                  3.11.x                  | **Component/s** | Feature/Materialized Views |
+|   **Since Version**   |                  3.11.x                  | **Fix Version/s** | 3.11.12, 4.1-alpha1, 4.1 |
 
 ### Description
 
@@ -50,34 +52,39 @@ INSERT INTO t(k, v) VALUES (3, 1);
 ERROR [MutationStage-2] 2021-08-10 09:55:56,662 StorageProxy.java:1551 - Failed to apply mutation locally : 
 org.apache.cassandra.exceptions.InvalidRequestException: Unknown function test.double called
 	at org.apache.cassandra.cql3.statements.RequestValidations.invalidRequest(RequestValidations.java:217)
-	at org.apache.cassandra.cql3.functions.FunctionCall$Raw.prepare(FunctionCall.java:155)
-	at org.apache.cassandra.cql3.SingleColumnRelation.toTerm(SingleColumnRelation.java:123)
-	at org.apache.cassandra.cql3.SingleColumnRelation.newSliceRestriction(SingleColumnRelation.java:231)
-	at org.apache.cassandra.cql3.Relation.toRestriction(Relation.java:144)
-	at org.apache.cassandra.cql3.restrictions.StatementRestrictions.<init>(StatementRestrictions.java:188)
-	at org.apache.cassandra.cql3.restrictions.StatementRestrictions.<init>(StatementRestrictions.java:135)
-	at org.apache.cassandra.cql3.statements.SelectStatement$RawStatement.prepareRestrictions(SelectStatement.java:1067)
-	at org.apache.cassandra.cql3.statements.SelectStatement$RawStatement.prepare(SelectStatement.java:937)
-	at org.apache.cassandra.db.view.View.getSelectStatement(View.java:180)
-	at org.apache.cassandra.db.view.View.getReadQuery(View.java:204)
-	at org.apache.cassandra.db.view.TableViews.updatedViews(TableViews.java:368)
-	at org.apache.cassandra.db.view.ViewManager.updatesAffectView(ViewManager.java:85)
-	at org.apache.cassandra.db.Keyspace.applyInternal(Keyspace.java:538)
-	at org.apache.cassandra.db.Keyspace.apply(Keyspace.java:513)
-	at org.apache.cassandra.db.Mutation.apply(Mutation.java:215)
-	at org.apache.cassandra.db.Mutation.apply(Mutation.java:220)
-	at org.apache.cassandra.db.Mutation.apply(Mutation.java:229)
-	at org.apache.cassandra.service.StorageProxy$4.runMayThrow(StorageProxy.java:1545)
-	at org.apache.cassandra.service.StorageProxy$LocalMutationRunnable.run(StorageProxy.java:2324)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at org.apache.cassandra.concurrent.AbstractLocalAwareExecutorService$FutureTask.run(AbstractLocalAwareExecutorService.java:162)
-	at org.apache.cassandra.concurrent.AbstractLocalAwareExecutorService$LocalSessionFutureTask.run(AbstractLocalAwareExecutorService.java:134)
-	at org.apache.cassandra.concurrent.SEPWorker.run(SEPWorker.java:119)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:748)
+	...
 WriteFailure: Error from server: code=1500 [Replica(s) failed to execute write] message="Operation failed - received 0 responses and 1 failures: UNKNOWN from localhost/127.0.0.1:7000" info={'consistency': 'ONE', 'required_responses': 1, 'received_responses': 0, 'failures': 1, 'error_code_map': {'127.0.0.1': '0x0000'}}
 ```
 
 ### Testcase
 
 After starting the cluster, create keyspace and table respectively, create custom method and MATERIALIZED VIEW, then restart node one, restart cassandra service and execute an insert sql, throw exception Cassandra failure during write query at consistency LOCAL_ONE (1 responses were required but only 0 replica responded, 2 failed), the exception information provided by the author is consistent with the system.log
+
+启动集群后，分别创建keyspace和table，创建custom method和MATERIALIZED VIEW，然后重启节点一，重启cassandra服务并执行insert sql，在一致性LOCAL_ONE下抛异常Cassandra failure during write query (1 responses were required but only 0 replica responded, 2 failed），作者提供的异常信息与system.log一致
+
+### Testcase
+
+Reproduced version：3.11.6
+
+Steps to reproduce：
+1. Create a client connection cluster and create keyspace, table, custom method and MATERIALIZED VIEW in turn.
+2. Inject node crash failure, restart "server2" node.
+3. Check the running status of the node, it is running normally.
+4. Execute the cql statement to insert test data and throw an exception:
+
+```
+18:25:23.804 [cluster2-nio-worker-2] DEBUG com.datastax.driver.core.Connection - Connection[/10.2.0.3:9042-3, inFlight=1, closed=false] Keyspace set to test
+com.datastax.driver.core.exceptions.WriteFailureException: Cassandra failure during write query at consistency LOCAL_ONE (1 responses were required but only 0 replica responded, 1 failed)
+	at com.datastax.driver.core.exceptions.WriteFailureException.copy(WriteFailureException.java:174)
+	...
+```
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/cassandra/pull/1132/commits/bfc87c103d0ad8df4f464381b34556887067fc76](https://github.com/apache/cassandra/pull/1132/commits/bfc87c103d0ad8df4f464381b34556887067fc76)
+
+Fix version：3.11.6
+
+Regression testing path：Archive/Cassandra/Cassandra-16836/apache-cassandra-3.11.6-src/fix/
