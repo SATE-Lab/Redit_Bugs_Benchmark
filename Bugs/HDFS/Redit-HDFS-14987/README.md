@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: EC: EC file blockId location info displaying as "null" with hdfs fsck -blockId command
+Title: ***EC: EC file blockId location info displaying as "null" with hdfs fsck -blockId command***
+
+JIRA link：[https://issues.apache.org/jira/browse/HDFS-14987](https://issues.apache.org/jira/browse/HDFS-14987)
 
 |         Label         |  Value   |      Label      |    Value    |
 |:---------------------:|:--------:|:---------------:|:-----------:|
 |       **Type**        |   Bug    |  **Priority**   |    Major    |
 |      **Status**       | RESOLVED | **Resolution**  |  Duplicate  |
-| **Affects Version/s** |  3.1.2   | **Component/s** |  ec, tools  |
+| **Affects Version/s** |  3.1.2   | **Fix Version/s** |   None    |
 
 ### Description
 
@@ -25,7 +27,14 @@ Expected output :- It should display the blockId location related info as (nodes
 
 ### Testcase
 
-Start a hadoop cluster, create two test folders in hdfs, and set their erasure coding policies to XOR-2-1-1024k and replicate respectively. Pass in a txt file in each of the two files, and obtain the blockId of the file storage, through /bin/hdfs fsck checks the block information separately, and the results are as follows:
+Reproduced version：3.1.2
+
+Steps to reproduce：
+1. Create two test folders in hdfs, and set their erasure coding policies to XOR-2-1-1024k and Replicate respectively.
+2. Pass in a txt file in each of the two files.
+3. Obtain the blockId of the file storage.
+4. Through /bin/hdfs fsck checks the block information separately, and the results are as follows:
+
 ```
 $ /hadoop/hadoop-3.1.2/bin/hdfs fsck /test_ec/aa.txt -blockId blk_-9223372036854775792
 
@@ -42,6 +51,7 @@ null
 
 Fsck on blockId 'blk_-9223372036854775792
 
+
 $ /hadoop/hadoop-3.1.2/bin/hdfs fsck /test_replica/aa.txt -blockId blk_1073741825
 
 Block Id: blk_1073741825
@@ -56,5 +66,15 @@ No. of corrupted Replica: 0
 Block replica on datanode/rack: dn3/default-rack is HEALTHY
 Block replica on datanode/rack: dn2/default-rack is HEALTHY
 Block replica on datanode/rack: dn1/default-rack is HEALTHY
-
 ```
+
+### Patch 
+
+Status：Available
+
+Link：[https://issues.apache.org/jira/secure/attachment/12958270/HDFS-14266-02.patch](https://issues.apache.org/jira/secure/attachment/12958270/HDFS-14266-02.patch)
+
+Fix version：3.1.2
+
+Regression testing path：Archive/Hadoop/HDFS-14987/hadoop-3.1.2-src/fix/
+
