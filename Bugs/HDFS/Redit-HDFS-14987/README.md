@@ -17,10 +17,12 @@ JIRA link：[https://issues.apache.org/jira/browse/HDFS-14987](https://issues.ap
 EC file blockId location info displaying as "null" with hdfs fsck -blockId command
 
 Check the blockId information of an EC enabled file with "hdfs fsck -blockId"  Check the blockId information of an EC enabled file with "hdfs fsck -blockId"    blockId location related info will display as null,which needs to be rectified.    
-Check the attachment "EC_file_block_info"
 
-=======================================================
+- Check the attachment "EC_file_block_info"
 ![img.png](https://issues.apache.org/jira/secure/attachment/12985740/12985740_image-2019-11-13-18-36-29-063.png)
+
+- Check the output of a normal file block to compare
+![img.png](https://issues.apache.org/jira/secure/attachment/12985741/12985741_image-2019-11-13-18-34-00-067.png)
 
 Actual Output :-     null   
 Expected output :- It should display the blockId location related info as (nodes, racks) of the block  as specified in the usage info of fsck -blockId option.                 [like : Block replica on datanode/rack: BLR10000xx038/default-rack is HEALTHY]
