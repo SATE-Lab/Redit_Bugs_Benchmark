@@ -31,4 +31,7 @@ Two testcases：
 
 ### Patch 
 
-Status：Not submitted
+Status：Someone submitted but not resolved
+
+Link：[https://issues.apache.org/jira/secure/attachment/12947706/HDFS-13998.03.patch](https://issues.apache.org/jira/secure/attachment/12947706/HDFS-13998.03.patch)
+
