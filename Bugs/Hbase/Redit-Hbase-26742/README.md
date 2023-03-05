@@ -47,7 +47,7 @@ Reproduced version：2.4.9
 Steps to reproduce：
 1. Connect to the cluster and get the admin object. 
 2. Create a table, add test data to the table.
-4. Use the checkAndMutate method to generate a Failure:
+3. Use the checkAndMutate method to generate a Failure:
 ```
 org.junit.ComparisonFailure: 
 Expected :v1
@@ -65,4 +65,4 @@ Actual   :v0
 
 Status：To be tested
 
-Due to local environment problems, domain name resolution problems occurred when the HBASE client accessed the cluster.
+Due to local environment problems, the service domain name cannot be found when the HBASE client accesses the cluster.
