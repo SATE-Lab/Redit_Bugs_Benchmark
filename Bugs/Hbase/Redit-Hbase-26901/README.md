@@ -35,7 +35,7 @@ Caused by: java.lang.NullPointerException at org.apache.hadoop.hbase.regionserve
 
 ### Testcase
 
-Reproduced version：2.4.9
+Reproduced version：2.4.11
 
 Steps to reproduce：
 1. Connect to the cluster and get the admin object.
