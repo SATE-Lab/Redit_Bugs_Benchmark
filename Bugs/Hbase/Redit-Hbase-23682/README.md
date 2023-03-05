@@ -70,6 +70,6 @@ Status：Available
 
 Link：[https://github.com/apache/hbase/pull/3541/commits/5d0b1accbe3007c8f6bffff8c654e8f2f44f1689](https://github.com/apache/hbase/pull/3541/commits/5d0b1accbe3007c8f6bffff8c654e8f2f44f1689)
 
-Fix version：3.11.6
+Fix version：2.2.2
 
 Regression testing path：Archive/Hbase/Hbase-23682/hbase-2.2.2-src/fix/
