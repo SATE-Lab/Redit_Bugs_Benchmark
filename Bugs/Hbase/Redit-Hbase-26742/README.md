@@ -2,17 +2,19 @@
 
 ### Details
 
-Title: delete with null columnQualifier occurs NullPointerException when NewVersionBehavior is on
+Title: ***delete with null columnQualifier occurs NullPointerException when NewVersionBehavior is on***
+
+JIRA link：[https://issues.apache.org/jira/browse/HBASE-26742](https://issues.apache.org/jira/browse/HBASE-26742)
 
 |         Label         |        Value        |      Label      |         Value          |
 |:---------------------:|:-------------------:|:---------------:|:----------------------:|
 |       **Type**        |         Bug         |  **Priority**   |         Major          |
 |      **Status**       |      RESOLVED       | **Resolution**  |         Fixed          |
-| **Affects Version/s** | 1.8.0 , 3.0.0-alpha-2 , 2.4.9 | **Component/s** |     None     |
+| **Affects Version/s** | 1.8.0 , 3.0.0-alpha-2 , 2.4.9 | **Fix Version/s** | 2.5.0, 3.0.0-alpha-3, 2.4.10 |
 
 ### Description
 
- In server side, checkAndMutate ignores CompareOperator for null or empty comparator value, but NOT_EQUAL should be treated specially.
+In server side, checkAndMutate ignores CompareOperator for null or empty comparator value, but NOT_EQUAL should be treated specially.
 
 The check logic in HRegion#checkAndMutateInternal is as follows,
 
@@ -40,8 +42,12 @@ For current logics, here are some  counter examples(Comparator value is set null
 
 ### Testcase
 
-Start an hbase cluster, connect to the cluster and get the admin object. Create a table, add test data to the table, and use the checkAndMutate method to generate a Failure:
+Reproduced version：2.4.9
 
+Steps to reproduce：
+1. Connect to the cluster and get the admin object. 
+2. Create a table, add test data to the table.
+4. Use the checkAndMutate method to generate a Failure:
 ```
 org.junit.ComparisonFailure: 
 Expected :v1
@@ -54,3 +60,9 @@ Actual   :v0
 	at io.redit.samples.hbase26742.SampleTest.sampleTest(SampleTest.java:94)
 	......
 ```
+
+### Patch 
+
+Status：To be tested
+
+Due to local environment problems, domain name resolution problems occurred when the HBASE client accessed the cluster.
