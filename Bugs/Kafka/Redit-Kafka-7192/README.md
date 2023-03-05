@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: State-store can desynchronise with changelog
+Title: ***State-store can desynchronise with changelog***
+
+JIRA link：[https://issues.apache.org/jira/browse/KAFKA-7192](https://issues.apache.org/jira/browse/KAFKA-7192)
 
 |         Label         |        Value        |      Label      |         Value          |
 |:---------------------:|:-------------------:|:---------------:|:----------------------:|
 |       **Type**        |         Bug         |  **Priority**   |         Critical          |
 |      **Status**       |      RESOLVED       | **Resolution**  |         Fixed          |
-| **Affects Version/s** | 0.11.0.3, 1.0.2, 1.1.1, 2.0.0 | **Component/s** |  streams |
+| **Affects Version/s** | 0.11.0.3, 1.0.2, 1.1.1, 2.0.0 | **Fix Version/s** | 0.11.0.4, 1.0.3, 1.1.2, 2.0.1, 2.1.0 |
 
 ### Description
 
@@ -39,8 +41,14 @@ I'd consider this a corruption of the state-store, hence the critical Priority, 
 
 I wrote a proof-of-concept here, which demonstrates the problem on Linux:
 
-https://github.com/spadger/kafka-streams-sad-state-store
+[https://github.com/spadger/kafka-streams-sad-state-store](https://github.com/spadger/kafka-streams-sad-state-store)
 
 ### Testcase
 
 Through the reproduction of the given code logic, it is found that the topology collapse mentioned by the author actually refers to the collapse of the kafka stream. In the reproduction process, an exception is thrown to simulate its collapse. The node restart mentioned is actually the restart of the stream (topology). The experimental results show that the record N will be reprocessed, and the record storage already has the previous processing state.
+
+### Patch
+
+Status：Available
+
+The patch information is unclear, making it difficult to understand and reproduce the fix.
