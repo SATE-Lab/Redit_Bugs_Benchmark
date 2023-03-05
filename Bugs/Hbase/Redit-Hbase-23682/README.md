@@ -72,4 +72,4 @@ Link：[https://github.com/apache/hbase/pull/3541/commits/5d0b1accbe3007c8f6bfff
 
 Fix version：2.2.2
 
-The patch is a modification of a configuration file, not a system source package.
+Regression testing path：Archive/Hbase/Hbase-23682/hbase-2.2.2-src/fix/
