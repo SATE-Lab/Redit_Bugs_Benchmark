@@ -2,7 +2,7 @@
 
 ### Details
 
-Title: ***delete with null columnQualifier occurs NullPointerException when NewVersionBehavior is on***
+Title: ***Comparator of NOT_EQUAL NULL is invalid for checkAndMutate***
 
 JIRA link：[https://issues.apache.org/jira/browse/HBASE-26742](https://issues.apache.org/jira/browse/HBASE-26742)
 
