@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: Kafka requires ZK root access even when using a chroot
+Title: ***Kafka requires ZK root access even when using a chroot***
+
+JIRA link：[https://issues.apache.org/jira/browse/KAFKA-12866](https://issues.apache.org/jira/browse/KAFKA-12866)
 
 |         Label         |        Value        |      Label      |         Value          |
 |:---------------------:|:-------------------:|:---------------:|:----------------------:|
 |       **Type**        |         Bug         |  **Priority**   |         Major          |
 |      **Status**       |      RESOLVED       | **Resolution**  |         Fixed          |
-| **Affects Version/s** | 2.6.1, 2.8.0, 2.7.1, 2.6.2 | **Component/s** |   core, zkclient   |
+| **Affects Version/s** | 2.6.1, 2.8.0, 2.7.1, 2.6.2 | **Fix Version/s** |     3.0.0     |
 
 ### Description
 
@@ -54,4 +56,25 @@ Kafka fails to start with a fatal exception:
 
 ### Testcase
 
-After starting the zk cluster, create a permanent node "/chroot" and set acl access permissions, add auth information, and set acl access permissions in the root directory. After the configuration of kafka is set to zookeeper.connect, the node path is added, and the kafka cluster starts to crash.
+Reproduced version：2.8.0
+
+Steps to reproduce：
+1. After starting the zk cluster, create a permanent node "/chroot" and set acl access permissions.
+2. Add auth information, and set acl access permissions in the root directory.
+3. After the configuration of kafka is set to zookeeper.connect, the node path is added, and the kafka cluster starts to crash:
+```
+org.apache.zookeeper.KeeperException$NoAuthException: KeeperErrorCode = NoAuth for /chroot
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:120)
+    ...
+```
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/kafka/pull/10795/commits/c5e13feea88a84052b177243767baae269ee84f4](https://github.com/apache/kafka/pull/10795/commits/c5e13feea88a84052b177243767baae269ee84f4)
+
+Fix version：3.0.0
+
+Regression testing path：Archive/Kafka/Kafka-12866/kafka-3.0.0-src/fix/
+
