@@ -21,8 +21,9 @@ JIRA link：[https://issues.apache.org/jira/browse/HDFS-13998](https://issues.ap
 
 Reproduced version：3.1.2
 
-Two testcases：
 **Note:** There are many types of Erasure Coding Policy in hdfs, the default is replicate.
+
+Two testcases：
 
 1. Start an hdfs cluster, create two test folders in hdfs, and set their erasure coding policies to RS-6-3-1024k and replicate respectively. Obtain its erasure code through DistributedFileSystem.getErasureCodingPolicy. It turns out that the file set to the RS-6-3-1024k policy returns correct information, and the file set to the replicate policy returns null.
 
