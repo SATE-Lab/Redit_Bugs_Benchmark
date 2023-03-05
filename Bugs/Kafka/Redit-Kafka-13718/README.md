@@ -2,13 +2,15 @@
 
 ### Details
 
-Title: kafka-topics describe topic with default config will show `segment.bytes` overridden config
+Title: ***kafka-topics describe topic with default config will show `segment.bytes` overridden config***
+
+JIRA link：[https://issues.apache.org/jira/browse/KAFKA-13718](https://issues.apache.org/jira/browse/KAFKA-13718)
 
 |         Label         |        Value        |      Label      |         Value          |
 |:---------------------:|:-------------------:|:---------------:|:----------------------:|
 |       **Type**        |         Bug         |  **Priority**   |         Major          |
 |      **Status**       |      RESOLVED       | **Resolution**  |         Fixed          |
-| **Affects Version/s** | 3.1.0, 2.8.1, 3.0.0 | **Component/s** |         tools          |
+| **Affects Version/s** | 3.1.0, 2.8.1, 3.0.0 | **Fix Version/s** |        3.3.0         |
 
 ### Description
 
@@ -31,4 +33,18 @@ Note: I checked the 2.8.1 build, this issue also happened.
 
 ### Testcase
 
-Start zookeeper and kafka in a three-node cluster, then create topic 'test' in server no.1 with default config. After that, describe the topic using '--describe --topic' command, the console displays additional information about segment bytes, but it should not be shown because of the default configuration.
+Reproduced version：2.13-3.2.0
+
+Steps to reproduce：
+1. Start zookeeper and kafka in a three-node cluster, then create topic 'test' in server no.1 with default config.
+2. Describe the topic using '--describe --topic' command, the console displays additional information about segment bytes, but it should not be shown because of the default configuration.
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/kafka/pull/12246/commits](https://github.com/apache/kafka/pull/12246/commits)
+
+Fix version：3.2.0
+
+The patch is a modification of a configuration file, not a system source package.
