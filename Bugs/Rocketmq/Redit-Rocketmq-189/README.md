@@ -1,6 +1,7 @@
 # Redit-Rocket-189
 
 ### Details
+
 Title: ***Offset store is null after consumer clients start()***
 
 JIRA link：[https://issues.apache.org/jira/browse/ROCKETMQ-189](https://issues.apache.org/jira/browse/ROCKETMQ-189)
