@@ -50,6 +50,7 @@ Steps to reproduce：
 
 java.lang.RuntimeException: org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists for /e1
 	at io.redit.samples.zookeeper4466.SampleTest.lambda$testWatcherExpiredAfterAllServerDown$9(SampleTest.java:119)
+	...
 ```
 
 ### Patch 
