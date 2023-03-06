@@ -1,13 +1,13 @@
 # Redit-Rocket-257
 
 ### Details
-Title: name server address and web server address should be specified at least one
+Title: ***name server address and web server address should be specified at least one***
 
 |         Label         |    Value     | Label           |       Value        |
 |:---------------------:|:------------:|:---------------:|:------------------:|
 |       **Type**        |     Bug      | **Priority**    |       Minor        |
 |      **Status**       |    CLOSED    | **Resolution**  |       Fixed        |
-| **Affects Version/s** | 4.1.0-incubating | **Component/s** |      rocketmq-client       |
+| **Affects Version/s** | 4.1.0-incubating | **Fix Version/s** |   4.2.0      |
 
 ### Description
 
@@ -24,4 +24,20 @@ right name server and client will start fail, because the default wsAddr=http://
 
 ### Testcase
 
-Start a rocket cluster, add rocket-client dependencies, create a DefaultMQProducer object, comment out producer.setNamesrvAddr(), and find that the producer can be started normally without error. However, the exception No name server address is thrown when sending the message. We want to verify when the producer starts: name server address and web server address should be specified at least one.
+Reproduced version：4.1.0-incubating
+
+Steps to reproduce：
+1. Create a DefaultMQProducer object, comment out producer.setNamesrvAddr().
+2. Find that the producer can be started normally without error.
+3. However, the exception No name server address is thrown when sending the message.
+4. We want to verify when the producer starts: name server address and web server address should be specified at least one.
+
+### Patch 
+
+Status：Available
+
+Link：[https://github.com/apache/rocketmq/pull/144/commits](https://github.com/apache/rocketmq/pull/144/commits)
+
+Fix version：4.1.0-incubating
+
+Regression testing path：Archive/Rocketmq/Rocketmq-257/rocketmq-all-4.1.0-incubating-src/fix/
