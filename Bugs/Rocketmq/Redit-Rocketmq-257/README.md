@@ -1,7 +1,10 @@
 # Redit-Rocket-257
 
 ### Details
+
 Title: ***name server address and web server address should be specified at least one***
+
+JIRA link：[https://issues.apache.org/jira/browse/ROCKETMQ-257](https://issues.apache.org/jira/browse/ROCKETMQ-257)
 
 |         Label         |    Value     | Label           |       Value        |
 |:---------------------:|:------------:|:---------------:|:------------------:|
