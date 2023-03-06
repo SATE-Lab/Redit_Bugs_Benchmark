@@ -1,13 +1,16 @@
 # Redit-Zookeeper-4466
 
 ### Details
-Title: Watchers of different modes interfere on overlapping pathes
+
+Title: ***Watchers of different modes interfere on overlapping pathes***
+
+JIRA link：[https://issues.apache.org/jira/browse/ZOOKEEPER-4466](https://issues.apache.org/jira/browse/ZOOKEEPER-4466)
 
 |         Label         |    Value     | Label           |       Value        |
 |:---------------------:|:------------:|:---------------:|:------------------:|
 |       **Type**        |     Bug      | **Priority**    |       Major        |
 |      **Status**       |     OPEN     | **Resolution**  |     Unresolved     |
-| **Affects Version/s** | 3.6.3, 3.7, 3.6.4 | **Component/s** |      java client, server       |
+| **Affects Version/s** | 3.6.3, 3.7, 3.6.4 | **Fix Version/s** |    None     |
 
 ### Description
 I used to think watchers of different modes are orthogonal. I found there are not, when I wrote tests for unfinished rust client. And I wrote test cases in java and confirmed.
@@ -65,5 +68,13 @@ I skimmed the code and found two possible causes:
 2. WatcherModeManager trackes only one watcher mode.
 
 ### Testcase
+
+Reproduced version：3.7.1
+
+Two testcases to reproduce：
 1. Start a three-node zookeeper cluster, create a client and add two watchers for path `/a`: a persistent recursive watcher and a standard watcher. Next we create and delete some nodes and monitor the changes in the event queue recorded by persistent recursive watcher. The result shows that the event queue attached to the persistent recursive watcher is affected by both of the watchers.
 2. Similar to 1, but the two watchers are the persistent recursive watcher added to path `/a` and the persistent watcher added to path `/a/b`. The results are also similar to 1.
+
+### Patch 
+
+Status：Not submitted
