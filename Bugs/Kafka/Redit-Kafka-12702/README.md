@@ -10,7 +10,7 @@ JIRA link：[https://issues.apache.org/jira/browse/KAFKA-12702](https://issues.a
 |:---------------------:|:-----:|:----------------:|:------------:|
 |       **Type**        |  Bug  |   **Priority**   |    Blocker   |
 |      **Status**       | RESOLVED|  **Resolution**|  Fixed  |
-| **Affects Version/s** | 2.8.0 | **Component/s**  | None |
+| **Affects Version/s** | 2.8.0 | **Fix Version/s**  | 2.8.1, 3.0.0 |
 
 ### Description
 
